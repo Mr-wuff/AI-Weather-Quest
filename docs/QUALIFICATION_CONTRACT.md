@@ -26,7 +26,7 @@
 - Do not tune architecture or calibrator on official 2024–2025 once examined. B-route redesign requires fresh holdout/live weeks.
 
 ## Budget triage (project thresholds, NOT ECMWF rules)
-- A: W3 mean RPSS >= .27 and W4 >= .20, >=70% positive issues per window, each year/window >=.08 -> possible PRO 6000 investment with known leaderboard uncertainty.
+- A: W3 mean RPSS >= .33 and W4 >= .24, >=80% positive issues per window, each year/window >=.12 -> possible PRO 6000 investment with known leaderboard uncertainty.
 - B: positive but short of A -> improve before scale-up and evaluate with new holdout periods.
 - C: neither window skillfully beats climatology or highest window mean < .03 -> stop this candidate/input route.
 - These historical thresholds do not predict medals, cash, exact rankings, or future seasons.
