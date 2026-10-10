@@ -64,5 +64,16 @@
     "score": 0.0038521783377187834,
     "best_epoch": 5,
     "seconds": 17.95
+  },
+  {
+    "epoch": 6,
+    "loss": 0.003669310836509491,
+    "val_mse": 5.753998484578915e-05,
+    "val_prior_mse": 0.01568517442792654,
+    "val_cf_skill_velocity": 0.9990496961922362,
+    "val_delta_power_ratio": 0.9898631801467868,
+    "score": 0.0036684313018121462,
+    "best_epoch": 6,
+    "seconds": 17.8
   }
 ]
