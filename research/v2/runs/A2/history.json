@@ -62,5 +62,21 @@
     "best_epoch": 3,
     "score": 0.6145228368253428,
     "seconds": 23.56
+  },
+  {
+    "epoch": 4,
+    "train_loss": 0.0539686104360347,
+    "validation": {
+      "mse": 0.011187429493293165,
+      "relative_mse_to_persistence": 0.49741439286803385,
+      "counterfactual_skill": 0.5488776402865996,
+      "swapped_control_penalty": 3.1741419111206817,
+      "no_soc_penalty": 0.07991852376645503,
+      "no_sync_penalty": -0.027455583343991452,
+      "rps_vs_uniform": 0.6228218525274297
+    },
+    "best_epoch": 4,
+    "score": 0.5650827468250439,
+    "seconds": 23.32
   }
 ]
