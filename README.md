@@ -1,36 +1,36 @@
-# CIDM-S2S · ECMWF AI Weather Quest
+# CIDM-S2S for ECMWF AI Weather Quest
 
-Research repository for the CIDM (Closed Information Dynamics Model) subseasonal probabilistic forecasting entry.
+**Current experiment: L4 single-model investment qualification v0.2.** No extra CNN/Generic/FNO models are trained. Do not confuse the older v0.1 four-model architecture-ablation plan with the current competition-first plan.
 
-## First stage: L4 qualification before RTX PRO 6000 investment
+## Current single candidate
+- Name: CIDM-S2S Flagship
+- Inputs: past 8 complete weeks of global MSLP and TAS; temporal, geographic, slow/fast contextual encoding
+- Architecture: spatial/time/phase encoders + antisymmetric latent Flux + Skew + Hidden + optional spectral operator (SOC enabled); BER disabled without a real external port
+- Trainable parameters: 1,018,861 in default L4 qualification configuration
+- Output: global 121×240 five-quintile MSLP probabilities for days 19–25 and 26–32
+- Hardware: NVIDIA L4 for qualification; RTX PRO 6000 Blackwell 95GB **only if** the investment decision warrants it
 
-Qualification targets **MSLP** quintile-probability forecasts for days **19–25** and **26–32**, evaluated as ranked probability skill score (RPSS). Real training data and official evaluation are sourced from ECMWF's AI-WQ-package.
+## Evidence-based decision
+A: held-out **official** historical RPSS strongly positive and stable → consider PRO 6000 scale-up, while acknowledging competition-ranking uncertainty.  
+B: skill exists but insufficient → improve data/architecture on development periods and retest with **fresh** held-out dates.  
+C: no credible skill → stop **this candidate/input route**.  
+BLOCKED: official evaluations unavailable → do not declare investment-ready.
 
-The L4 pilot tests four architectures:
-- CNN reference (~47.7K trainable parameters)
-- CIDM Local-only (~31.1K; capacity-reduced ablation)
-- CIDM Generic capacity replacement (~49.2K)
-- CIDM Structured Flux / Hidden (~48.1K)
+The live SON 2026 MSLP leaderboard is **not directly comparable** to historical 2024–2025 issues. AI Weather Quest provides public recognition for high rankings but **does not award monetary or in-kind prizes**.
 
-It uses strictly historical Thursday issues, train/validation/test chronology, three random seeds, a causally constructed 20-year **historical quantile proxy** for architecture screening, and a separately gated **official 2024–2025 evaluation** using ECMWF observations/quantiles and `work_out_RPSS`.
+## Release assets
+- Self-contained Notebook: `CIDM_AIWQ_Single_Flagship_L4_CompetitionGate_v02.ipynb`
+- Python source files: `src/cidm_aiwq_single.py`, `src/cidm_architectures_reference.py`
+- Run locally or in cloud with an ECBox `AIWQ_PASSWORD` secret.
+- Source and lightweight reports sync to GitHub if `GITHUB_TOKEN` is configured in the cloud runtime.
+- Training checkpoints, optimizers, schedulers, RNG and reports sync to HF **model** repository `wuff-mann/AI_Weather_Quest` if a write-capable `HF_TOKEN` is configured.
 
-**Important:** Proxy RPSS is not the official competition score. An official test failure or missing registration credentials automatically blocks the PRO 6000 formal-training decision. No forecasts are automatically submitted to ECMWF.
+Raw ECMWF annual weather data is kept in persistent private storage; it is **not** uploaded into the public model repository. No automatic competition submission happens in the qualification notebook.
 
-## Where experiment artifacts go
+The notebook and full project ZIP were distributed in the ChatGPT project handoff; the actual cloud-trained source/reports will sync here once the L4 session is run with repository credentials.
 
-- GitHub: code, notebooks, configuration, gates, lightweight results and reproducibility reports.
-- Hugging Face **model**: [wuff-mann/AI_Weather_Quest](https://huggingface.co/wuff-mann/AI_Weather_Quest), training checkpoints, weights, and versioned experiment artifacts.
-- Persistent cloud volume: raw ECMWF ERA5 annual NetCDF and local sample caches (not uploaded to the model repository).
-
-At the outset the complete self-contained Notebook and accompanying `src/` files are distributed as `CIDM_AIWQ_Q0_Q3_L4_OfficialQualification_v01.ipynb` and the matching qualification release ZIP. Run once on the cloud L4 with write-capable environment credentials; it will sync results to GitHub/HF when those credentials are available.
-
-## Official references
+## Official resources
 - https://aiweatherquest.ecmwf.int/
 - https://aiweatherquest.ecmwf.int/leaderboards/
 - https://aiweatherquest.ecmwf.int/evaluation-system/
-- https://ecmwf-ai-weather-quest.readthedocs.io/en/latest/training_data.html
-- https://ecmwf-ai-weather-quest.readthedocs.io/en/latest/forecast_evaluation.html
-
-## Security
-
-Never commit `AIWQ_PASSWORD`, `HF_TOKEN`, or `GITHUB_TOKEN`. Use cloud secrets.
+- https://github.com/ecmwf/AI_weather_quest/tree/src
