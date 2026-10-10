@@ -1,0 +1,18 @@
+[
+  {
+    "epoch": 0,
+    "train_loss": 0.10040274386604627,
+    "validation": {
+      "mse": 0.021310633048415184,
+      "relative_mse_to_persistence": 0.9475112764523519,
+      "counterfactual_skill": 0.04449989457977688,
+      "swapped_control_penalty": 0.08907701638458465,
+      "no_soc_penalty": 0.0006173292175140066,
+      "no_sync_penalty": -0.0030088823071361404,
+      "rps_vs_uniform": 0.8076352649140031
+    },
+    "best_epoch": 0,
+    "score": 1.0908362922653854,
+    "seconds": 24.5
+  }
+]
