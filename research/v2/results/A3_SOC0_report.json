@@ -1,0 +1,279 @@
+{
+  "status": "A3_SOC0_NOT_QUALIFIED_NEEDS_RESEARCH",
+  "global_weather_investment": "BLOCKED_SYNTHETIC_ONLY",
+  "params": 46767,
+  "device": "cuda",
+  "best_epoch": 5,
+  "config": {
+    "root": "/content/CIDM_v2_A3_SOC0",
+    "epochs": 6,
+    "updates_per_epoch": 48,
+    "batch": 4,
+    "train_horizon": 8,
+    "history": 4,
+    "h": 24,
+    "w": 32,
+    "channels": 24,
+    "hidden": 40,
+    "lr": 0.0005,
+    "seed": 20261010,
+    "eval_seeds": 6,
+    "full_test": true
+  },
+  "gate": {
+    "haar_orthogonal_and_neutral": true,
+    "gradient_and_flux_preflight": true,
+    "id_ood_multi_family_short_forecast": true,
+    "medium_horizon_some_skill": true,
+    "cross_scale_counterfactual_benefit": false,
+    "long_forecast_stability": true
+  },
+  "preflight": {
+    "haar_relative_l2_error": 0.0,
+    "soc_param_gradient_sum": 0.056058282716549,
+    "flux_budget_max": 2.8870999813079834e-08
+  },
+  "summary": [
+    {
+      "family": "transport",
+      "horizon": 8,
+      "n": 6,
+      "mse": 0.0005877640602799753,
+      "persistence": 0.003405678280008336,
+      "linear_trend": 0.00039144222682807595,
+      "soc_disabled": 0.0006041096445793906,
+      "low_mse": 0.00033480396571879584,
+      "high_mse": 0.0002529600921358603,
+      "skill_persistence": 0.8274164463125575,
+      "skill_linear_trend": -0.5015346326908292,
+      "soc_ablation_penalty_pct": 2.780977164821774
+    },
+    {
+      "family": "transport",
+      "horizon": 16,
+      "n": 6,
+      "mse": 0.0040097015056138234,
+      "persistence": 0.011393929521242777,
+      "linear_trend": 0.0041567413524414105,
+      "soc_disabled": 0.004116850788705051,
+      "low_mse": 0.0024401257396675646,
+      "high_mse": 0.0015695757853488128,
+      "skill_persistence": 0.6480844033537193,
+      "skill_linear_trend": 0.03537382636069597,
+      "soc_ablation_penalty_pct": 2.6722508630932174
+    },
+    {
+      "family": "transport",
+      "horizon": 24,
+      "n": 6,
+      "mse": 0.016453493231286604,
+      "persistence": 0.020371608901768923,
+      "linear_trend": 0.019481025636196136,
+      "soc_disabled": 0.016278913244605064,
+      "low_mse": 0.010209364195664724,
+      "high_mse": 0.006244128880401452,
+      "skill_persistence": 0.1923321662699944,
+      "skill_linear_trend": 0.15540929217219013,
+      "soc_ablation_penalty_pct": -1.0610511958006108
+    },
+    {
+      "family": "reaction",
+      "horizon": 8,
+      "n": 6,
+      "mse": 0.0012154307138795655,
+      "persistence": 0.010792281478643417,
+      "linear_trend": 0.0001506135510377741,
+      "soc_disabled": 0.001249045570148155,
+      "low_mse": 0.0006379150630285343,
+      "high_mse": 0.0005775156120459238,
+      "skill_persistence": 0.8873796317965991,
+      "skill_linear_trend": -7.069862940650896,
+      "soc_ablation_penalty_pct": 2.765674413582442
+    },
+    {
+      "family": "reaction",
+      "horizon": 16,
+      "n": 6,
+      "mse": 0.005741083916897575,
+      "persistence": 0.040935332576433815,
+      "linear_trend": 0.0018704999432278175,
+      "soc_disabled": 0.005825726703430216,
+      "low_mse": 0.0029494139598682523,
+      "high_mse": 0.0027916698988216617,
+      "skill_persistence": 0.859752356813569,
+      "skill_linear_trend": -2.069277781955185,
+      "soc_ablation_penalty_pct": 1.4743345987943801
+    },
+    {
+      "family": "reaction",
+      "horizon": 24,
+      "n": 6,
+      "mse": 0.014464388446261486,
+      "persistence": 0.08003627508878708,
+      "linear_trend": 0.0069138849309335155,
+      "soc_disabled": 0.014746334093312422,
+      "low_mse": 0.0061999033981313305,
+      "high_mse": 0.00826448497051994,
+      "skill_persistence": 0.819277091166279,
+      "skill_linear_trend": -1.0920782730337542,
+      "soc_ablation_penalty_pct": 1.9492400117601116
+    },
+    {
+      "family": "wave",
+      "horizon": 8,
+      "n": 6,
+      "mse": 0.0006272280394720534,
+      "persistence": 0.005781346388782064,
+      "linear_trend": 0.0006459127471316606,
+      "soc_disabled": 0.0006487731928549086,
+      "low_mse": 0.0002946197734369586,
+      "high_mse": 0.00033260827088573325,
+      "skill_persistence": 0.891508310124938,
+      "skill_linear_trend": 0.028927603213563025,
+      "soc_ablation_penalty_pct": 3.4349793100751924
+    },
+    {
+      "family": "wave",
+      "horizon": 16,
+      "n": 6,
+      "mse": 0.004507580888457596,
+      "persistence": 0.01932278973981738,
+      "linear_trend": 0.0065049246574441595,
+      "soc_disabled": 0.004628144670277834,
+      "low_mse": 0.002566377865150571,
+      "high_mse": 0.001941202935995534,
+      "skill_persistence": 0.7667220443242169,
+      "skill_linear_trend": 0.3070510227510208,
+      "soc_ablation_penalty_pct": 2.6746892580222115
+    },
+    {
+      "family": "wave",
+      "horizon": 24,
+      "n": 6,
+      "mse": 0.0181704464678963,
+      "persistence": 0.04032937064766884,
+      "linear_trend": 0.028177338807533186,
+      "soc_disabled": 0.01914823396752278,
+      "low_mse": 0.009921869495883584,
+      "high_mse": 0.00824857666157186,
+      "skill_persistence": 0.5494487968423923,
+      "skill_linear_trend": 0.3551397244427338,
+      "soc_ablation_penalty_pct": 5.381196886681039
+    },
+    {
+      "family": "coupled",
+      "horizon": 8,
+      "n": 6,
+      "mse": 0.0004202260364157458,
+      "persistence": 0.003797254408709705,
+      "linear_trend": 0.0006037227091534684,
+      "soc_disabled": 0.0004376377716350059,
+      "low_mse": 0.00023138424391315007,
+      "high_mse": 0.00018884179492791495,
+      "skill_persistence": 0.8893342422746604,
+      "skill_linear_trend": 0.3039419752737462,
+      "soc_ablation_penalty_pct": 4.1434213281430265
+    },
+    {
+      "family": "coupled",
+      "horizon": 16,
+      "n": 6,
+      "mse": 0.0032529295034085712,
+      "persistence": 0.01083041502473255,
+      "linear_trend": 0.005571082156772415,
+      "soc_disabled": 0.0032807113602757454,
+      "low_mse": 0.0022844635726263127,
+      "high_mse": 0.0009684658143669367,
+      "skill_persistence": 0.6996486749602746,
+      "skill_linear_trend": 0.41610455350147924,
+      "soc_ablation_penalty_pct": 0.854056530830527
+    },
+    {
+      "family": "coupled",
+      "horizon": 24,
+      "n": 6,
+      "mse": 0.010909377442051968,
+      "persistence": 0.01579828855271141,
+      "linear_trend": 0.01673010379696886,
+      "soc_disabled": 0.011092716827988625,
+      "low_mse": 0.00779932194078962,
+      "high_mse": 0.003110055811703205,
+      "skill_persistence": 0.30945827418884386,
+      "skill_linear_trend": 0.3479193210965902,
+      "soc_ablation_penalty_pct": 1.6805668967868392
+    }
+  ],
+  "counterfactual_summary": [
+    {
+      "family": "transport",
+      "perturbation": "low",
+      "n": 6,
+      "cross_cf_skill": 0.7396866662437351,
+      "no_soc_cross_cf_skill": 0.803821919995296,
+      "true_cross_power": 0.00022540213346170881
+    },
+    {
+      "family": "transport",
+      "perturbation": "high",
+      "n": 6,
+      "cross_cf_skill": 0.8632561490061604,
+      "no_soc_cross_cf_skill": 0.8587124453136759,
+      "true_cross_power": 0.00014694440566624203
+    },
+    {
+      "family": "reaction",
+      "perturbation": "low",
+      "n": 6,
+      "cross_cf_skill": 0.5217123810515562,
+      "no_soc_cross_cf_skill": 0.6230254187490315,
+      "true_cross_power": 0.00014643286946617687
+    },
+    {
+      "family": "reaction",
+      "perturbation": "high",
+      "n": 6,
+      "cross_cf_skill": 0.7118622032588164,
+      "no_soc_cross_cf_skill": 0.66830874188196,
+      "true_cross_power": 7.911986176623031e-05
+    },
+    {
+      "family": "wave",
+      "perturbation": "low",
+      "n": 6,
+      "cross_cf_skill": -0.43207633479735946,
+      "no_soc_cross_cf_skill": -0.3649164618602989,
+      "true_cross_power": 0.0006795145163778216
+    },
+    {
+      "family": "wave",
+      "perturbation": "high",
+      "n": 6,
+      "cross_cf_skill": -0.05977100274745798,
+      "no_soc_cross_cf_skill": -0.08387062488306707,
+      "true_cross_power": 0.000474093578911076
+    },
+    {
+      "family": "coupled",
+      "perturbation": "low",
+      "n": 6,
+      "cross_cf_skill": -2.3017599784833584,
+      "no_soc_cross_cf_skill": -1.7573895065044323,
+      "true_cross_power": 2.1510237881254095e-05
+    },
+    {
+      "family": "coupled",
+      "perturbation": "high",
+      "n": 6,
+      "cross_cf_skill": 0.04243408419194746,
+      "no_soc_cross_cf_skill": 0.33873086294886234,
+      "true_cross_power": 1.3308817869983613e-05
+    }
+  ],
+  "caveats": [
+    "One neural model, four different synthetic families and no PDE-specific model branches or privileged future inputs.",
+    "Orthogonal Haar mixing conserves its own coefficient L2, not physical mass/energy/Shannon information.",
+    "Disabling SOC at inference is a frozen-weights reliance test, not capacity-controlled proof.",
+    "No result is evidence of ECMWF AI Weather Quest RPSS. No PRO6000 training approved.",
+    "Family formulas used for data generation but never as model forward-step dynamics."
+  ]
+}
