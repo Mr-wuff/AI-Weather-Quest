@@ -1,0 +1,11 @@
+# CIDM-v2 B1-R3 Q0 STOP and B1-R3/R1 research follow-up (2026-10-13)
+
+Uploaded executed notebook and B1-R3 result ZIP checked: status Q0_PREQUALIFICATION_STOP. Pilot ran exactly three seed17 models x90 updates, not formal three seeds. Valid ZIP, 19038 matched parameters, 3/4 Q0 gates pass.
+
+Measured seen continuous State-Port vs Zero-Port gain +1.2665%, Readout-Port vs Zero-Port -0.3622%; required +5% each, both fail. Early pulse State/Readout MSE 1.01222; State post-event prediction/true response power 0.00408666 (only 0.409%); post-event CF skill 0.09113 and true post signal power 1.61465e-4. The original power gate only imposed an upper bound 8, so this severe underresponse incorrectly passed the 'not unbounded' test. This is early underresponse, not a correction of the old 150-step State-Port post-pulse overresponse.
+
+Original loss = field MSE +0.4 raw-CF MSE +0.25 raw-post-CF MSE, with weak pulse signal ~1e-4 vs field error ~1e-2, suggesting scale-biased gradients. Four source-timing regimes and 6/12-step alternating horizons reduce each regime's learning exposure. A 90-update Q0 failure is not proof BER architecture is unnecessary.
+
+New B1-R3/R1 fully standalone Colab Notebook and source shipped through ChatGPT under CIDM_v2_B1_R3_R1_Causal_Gradient_Qualification_FULL.zip. Keep exact ConditionalModel architecture; compare four equal-parameter training controls: State-Port power-normalized causal objective; State-Port original raw loss; Readout-Port normalized; Zero-Port normalized. Q0 now 240 updates/model on one seed with port gradient diagnostics; evaluate seen families only for selection. Retain ≥5% field gain requirement for both port modes, plus new CF skill≥0.15, post-pulse power ratio between 0.1 and 3, State/Readout pulse field MSE≤1.15, normalized-vs-original post-pulse CF skill≥0.05. Stop and report unless every gate passes. Then train two more independent seeds with heldout post-pulse tests. Do not claim unrun formal success.
+
+All-cell CPU smoke passed, output ZIP verified, SMOKE_DIAGNOSTIC_ONLY status as expected. Official full 240-step Q0 has not run. No PDEBench or AI Weather Quest qualification, no RTX PRO 6000 authorization. CIDM-v2 remains development target.
