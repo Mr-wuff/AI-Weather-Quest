@@ -1,0 +1,114 @@
+{
+  "experiment": "CIDM_v2_B2_R1_FIX2_Flux_Control_Prequalification",
+  "date": "2026-10-13",
+  "source": "user-uploaded CIDM_v2_B2_R1_FLUX_CONTROL_QUALIFICATION_REPORTS.zip",
+  "zip_sha256": "69b3f5ed19fed26a4f2ac1288011c2bd9dfeec1ad26518240c1cc562d8127964",
+  "data": "OFFICIAL_MD5_CHECKED",
+  "original_completed_runs": 18,
+  "replay": {
+    "status": "PASS",
+    "checked_v2_models": 9,
+    "max_forward_parity_diff": 0,
+    "archived_rmse12": {
+      "burgers_1d": [
+        0.13152127036229722,
+        0.13014773428941612,
+        0.12895213139056175
+      ],
+      "reacdiff_2d": [
+        0.00541317315776709,
+        0.005765330171625605,
+        0.005344532667602864
+      ],
+      "swe_2d": [
+        0.03166764698996222,
+        0.030134941110658977,
+        0.030094905161430548
+      ]
+    }
+  },
+  "status": "FROZEN_VAL_GATE_FAIL_NO_TRAINING",
+  "q1_trainable_results": [],
+  "q0_contract": {
+    "minimum_geometric_mse_gain": 0.03,
+    "max_per_family_regression": 0.02,
+    "min_paired_seed_wins": 2
+  },
+  "q0_candidates": [
+    {
+      "policy": "flux_cap2",
+      "gm_ratio": 0.9855082745292744,
+      "family": {
+        "burgers": 1.0274563880479677,
+        "reaction": 0.9353785879917059,
+        "swe": 0.9959327283357492
+      },
+      "wins": {
+        "burgers": 0,
+        "reaction": 3,
+        "swe": 2
+      }
+    },
+    {
+      "policy": "flux_cap4",
+      "gm_ratio": 0.981674001217907,
+      "family": {
+        "burgers": 1.0133981737228372,
+        "reaction": 0.9524974114575935,
+        "swe": 0.9800719197559342
+      },
+      "wins": {
+        "burgers": 1,
+        "reaction": 2,
+        "swe": 3
+      }
+    },
+    {
+      "policy": "flux_cap8",
+      "gm_ratio": 0.9884147051244614,
+      "family": {
+        "burgers": 1.0064400698520577,
+        "reaction": 0.9830768371848748,
+        "swe": 0.9759829059264895
+      },
+      "wins": {
+        "burgers": 1,
+        "reaction": 1,
+        "swe": 3
+      }
+    },
+    {
+      "policy": "flux_scale075",
+      "gm_ratio": 1.0129872830227469,
+      "family": {
+        "burgers": 1.008482381758184,
+        "reaction": 1.0140741452002837,
+        "swe": 1.0164217606041281
+      },
+      "wins": {
+        "burgers": 1,
+        "reaction": 1,
+        "swe": 1
+      }
+    },
+    {
+      "policy": "flux_scale050",
+      "gm_ratio": 1.268800724879999,
+      "family": {
+        "burgers": 1.100793852617272,
+        "reaction": 1.6542164950702383,
+        "swe": 1.1217134093208911
+      },
+      "wins": {
+        "burgers": 0,
+        "reaction": 0,
+        "swe": 0
+      }
+    }
+  ],
+  "data_manifest": {
+    "input_origin": "interactive_upload",
+    "parent_B0_sha256": "69552b29e169ec22ee85d9c1b1a678fdb188f6f25dc18f33b927b88f4dddffd4"
+  },
+  "archive_notice": "This is the complete compact structured result record extracted from user-provided ZIP; checkpoint binaries are NOT in this GitHub file. Future standalone Colab prioritizes HF/GitHub Releases for full parent and automatically uploads on first one-time upload if write tokens configured."
+}
