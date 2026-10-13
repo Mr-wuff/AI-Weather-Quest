@@ -1,0 +1,70 @@
+{
+  "experiment": "CIDM-v2-B2-R2/P0",
+  "source_code_hash": "8b4fd32e3f3675fd23764506267020dc61aba31c9ad54cfdf3ce6ace5d7e2c98",
+  "frozen_parent_sha256": "69552b29e169ec22ee85d9c1b1a678fdb188f6f25dc18f33b927b88f4dddffd4",
+  "source_driver_origin": [
+    "EMBEDDED_SHA256_VERIFIED_FIX2_NOTEBOOK"
+  ],
+  "observed_task_seed_pairs": [],
+  "missing_pairs": [
+    [
+      "burgers_1d",
+      "17"
+    ],
+    [
+      "burgers_1d",
+      "41"
+    ],
+    [
+      "burgers_1d",
+      "73"
+    ],
+    [
+      "reacdiff_2d",
+      "17"
+    ],
+    [
+      "reacdiff_2d",
+      "41"
+    ],
+    [
+      "reacdiff_2d",
+      "73"
+    ],
+    [
+      "swe_2d",
+      "17"
+    ],
+    [
+      "swe_2d",
+      "41"
+    ],
+    [
+      "swe_2d",
+      "73"
+    ]
+  ],
+  "frozen_probe_coverage": "INCOMPLETE_FAIL_CLOSED",
+  "parent_run": {
+    "state": "PARENT_RUN_COMPLETED",
+    "parent_status": "FROZEN_VAL_GATE_FAIL_NO_TRAINING",
+    "model_count": null,
+    "report_source": "ACTUAL_VERIFIED_PARENT_RUN",
+    "parent_zip_sha256": "69552b29e169ec22ee85d9c1b1a678fdb188f6f25dc18f33b927b88f4dddffd4"
+  },
+  "observer": {
+    "stage": "B2-R2/P0",
+    "status": "FROZEN_DIAGNOSTIC_ONLY_NO_TRAINING",
+    "qualification": "NOT_EVALUATED",
+    "number_of_rows": 0,
+    "coverage": [],
+    "limitations": [
+      "Observable responses are decoder-space only, not physical target increments.",
+      "No claims about true PDE physical conservation or Lyapunov exponents.",
+      "Frozen ablation is NOT a capacity-matched training comparison.",
+      "Truth-free diagnostic: cannot certify trajectory RMSE improvement.",
+      "No direct state synchronization intervention and no future-observation inputs."
+    ]
+  },
+  "status": "INCOMPLETE_OR_INTEGRITY_FAIL_NO_TRAINING"
+}
