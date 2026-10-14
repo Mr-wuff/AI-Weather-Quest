@@ -1,0 +1,6 @@
+{
+  "status": "BLOCKED_OFFICIAL_DIAGNOSTIC_NO_TRAINING",
+  "exception": "RuntimeError('MD5 mismatch for burgers_1d: 600dfb4ce65e655401c485037b307a38; expected e6d9a4f62baf9a29121a816b919e2770. Do not train.')",
+  "traceback": "Traceback (most recent call last):\n  File \"/tmp/ipykernel_2658/3514889099.py\", line 8, in <cell line: 0>\n    RESULT=diag.run(PARENT,WORK/'official_runtime',OUTPUT,smoke=False)\n  File \"/content/CIDM_v2_B2_R5_P0/sources/b2_r5_local_geometry.py\", line 181, in run\n    data=fetch_official(Path(root)/'official_data',task)\n  File \"/content/CIDM_v2_B2_R5_P0/sources/benchmark.py\", line 198, in fetch_official\n    if md5(part)!=expected:raise RuntimeError(f'MD5 mismatch for {task}: {md5(part)}; expected {expected}. Do not train.')\n                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: MD5 mismatch for burgers_1d: 600dfb4ce65e655401c485037b307a38; expected e6d9a4f62baf9a29121a816b919e2770. Do not train.\n",
+  "qualification": "NO_TRAINING"
+}
