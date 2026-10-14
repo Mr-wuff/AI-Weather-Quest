@@ -1,0 +1,135 @@
+{
+  "experiment": "CIDM_v2_B2_R7_P0_FrozenCausalController_GainAndSignSensitivity",
+  "status": "FROZEN_CONTROLLER_SENSITIVITY_COMPLETED_NO_TRAINING",
+  "tasks": [
+    {
+      "task": "burgers_1d",
+      "pilot_seed": 17,
+      "replay": {
+        "task": "burgers_1d",
+        "seed": 17,
+        "checkpoint_sha256": "f3ed74a10921fabaa37de81df78223e10eaa441ec44034373b9c593ba89166a0",
+        "archived_rmse12": 0.13152127036229722,
+        "replay_rmse12": 0.13152127272268235
+      },
+      "original_forecast_parity_max": 0.0,
+      "gain1_relative_delta_rms_lead12": 0.00016320676695613656,
+      "gain1_head_gate_mean_lead12": 0.009348905819933861,
+      "gain1_ratio_to_baseline_lead12": 0.9987195957339295,
+      "baseline_lead12_mse": 0.04830410564318299,
+      "readout_windows": [
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "outer_holdout": false
+    },
+    {
+      "task": "reacdiff_2d",
+      "pilot_seed": 17,
+      "replay": {
+        "task": "reacdiff_2d",
+        "seed": 17,
+        "checkpoint_sha256": "90da24883ec08052573c211dbeae0ef4ad4f72b8f931e010bb63528e9c766c3b",
+        "archived_rmse12": 0.00541317315776709,
+        "replay_rmse12": 0.0054131731017620635
+      },
+      "original_forecast_parity_max": 0.0,
+      "gain1_relative_delta_rms_lead12": 0.0006495032794191502,
+      "gain1_head_gate_mean_lead12": 0.04856992419809103,
+      "gain1_ratio_to_baseline_lead12": 0.9827702764335645,
+      "baseline_lead12_mse": 9.367470647703158e-05,
+      "readout_windows": [
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "outer_holdout": false
+    },
+    {
+      "task": "swe_2d",
+      "pilot_seed": 17,
+      "replay": {
+        "task": "swe_2d",
+        "seed": 17,
+        "checkpoint_sha256": "97cea4edadab4605f27f9c51631930146462e71ae39eb697cbe6393fd8414615",
+        "archived_rmse12": 0.03166764698996222,
+        "replay_rmse12": 0.031667646607028935
+      },
+      "original_forecast_parity_max": 0.0,
+      "gain1_relative_delta_rms_lead12": 0.0018416479579173028,
+      "gain1_head_gate_mean_lead12": 0.06283486634492874,
+      "gain1_ratio_to_baseline_lead12": 0.9885334987395439,
+      "baseline_lead12_mse": 0.0018966867646668106,
+      "readout_windows": [
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "outer_holdout": false
+    }
+  ],
+  "original_B2R6_pilot_status": "PILOT_SINGLE_SEED_FAIL_NO_FULL_TRAINING",
+  "b2r6_zip_sha256": "d923eb6af43c294f28ec4f236c707feb0c4bcf1e6e5fed519bf697599730ef89",
+  "parent_sha256": "69552b29e169ec22ee85d9c1b1a678fdb188f6f25dc18f33b927b88f4dddffd4",
+  "gain_list": [
+    0.0,
+    0.5,
+    1.0,
+    2.0,
+    4.0
+  ],
+  "signs": [
+    1,
+    -1
+  ],
+  "training_steps": 0,
+  "no_future_truth_in_forecast": true,
+  "labels_only_posthoc_audit": true,
+  "no_selection_on_validation": true,
+  "qualification": "DIAGNOSTIC_ONLY_NOT_FULL_TRAINING",
+  "limitations": [
+    "Only archived seed17 heads; no fresh outer holdout.",
+    "Amplifying trained frozen heads is not retraining or evidence of future issue-time calibration.",
+    "Gradient truncated in original B2-R6 training; this frozen audit cannot prove BPTT is causal bottleneck."
+  ]
+}
