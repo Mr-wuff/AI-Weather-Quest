@@ -1,0 +1,124 @@
+{
+  "experiment": "CIDM_v2_B2_R8_P0_FrozenEqualRMS_CausalControl_Diagnostic",
+  "status": "FROZEN_EQUAL_RMS_AUDIT_COMPLETED_NO_TRAINING",
+  "cases": [
+    {
+      "task": "burgers_1d",
+      "replay": {
+        "task": "burgers_1d",
+        "seed": 17,
+        "checkpoint_sha256": "f3ed74a10921fabaa37de81df78223e10eaa441ec44034373b9c593ba89166a0",
+        "archived_rmse12": 0.13152127036229722,
+        "replay_rmse12": 0.13152127272268235
+      },
+      "baseline_parity_max": 0.0,
+      "audit_windows": [
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "frozen_controller_only": true
+    },
+    {
+      "task": "reacdiff_2d",
+      "replay": {
+        "task": "reacdiff_2d",
+        "seed": 17,
+        "checkpoint_sha256": "90da24883ec08052573c211dbeae0ef4ad4f72b8f931e010bb63528e9c766c3b",
+        "archived_rmse12": 0.00541317315776709,
+        "replay_rmse12": 0.0054131731017620635
+      },
+      "baseline_parity_max": 0.0,
+      "audit_windows": [
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "frozen_controller_only": true
+    },
+    {
+      "task": "swe_2d",
+      "replay": {
+        "task": "swe_2d",
+        "seed": 17,
+        "checkpoint_sha256": "97cea4edadab4605f27f9c51631930146462e71ae39eb697cbe6393fd8414615",
+        "archived_rmse12": 0.03166764698996222,
+        "replay_rmse12": 0.031667646607028935
+      },
+      "baseline_parity_max": 0.0,
+      "audit_windows": [
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "frozen_controller_only": true
+    }
+  ],
+  "training_steps": 0,
+  "r6_real_archive_sha256": "d923eb6af43c294f28ec4f236c707feb0c4bcf1e6e5fed519bf697599730ef89",
+  "r7_real_archive_sha256": "9c7891b0784ce63c95dad6eb52c073ea69495f2e99adf38a4f187255397f987a",
+  "expected_parent_sha256": "69552b29e169ec22ee85d9c1b1a678fdb188f6f25dc18f33b927b88f4dddffd4",
+  "budgets": [
+    0.0,
+    0.0005,
+    0.001,
+    0.003,
+    0.005,
+    0.01
+  ],
+  "signs": [
+    1,
+    -1
+  ],
+  "num_curves": 345,
+  "num_samples": 5040,
+  "registered_decision_budget": 0.003,
+  "no_future_truth_used_in_control": true,
+  "labels_scoring_only": true,
+  "outer_holdout": false,
+  "notes": [
+    "Unit-norm controller action is evaluated at equal per-step/per-window latent-RMS exposure.",
+    "Natural vs Rotated comparison is exposure-matched, not trained-policy matched.",
+    "No validation budget maximization or deployment tuning; B0 checkpoint was val-selected.",
+    "Oracle gradient geometry from B2-R5 is not used in causal corrections."
+  ]
+}
