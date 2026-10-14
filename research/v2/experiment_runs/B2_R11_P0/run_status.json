@@ -1,0 +1,5 @@
+{
+  "status": "BLOCKED_OFFICIAL_BACKWARD_ATTRIBUTION_NO_TRAINING",
+  "exception": "RuntimeError('HEAD_PARTITION_GRADIENT_FAILED swe_2d operator 0.10675963707489294')",
+  "traceback": "Traceback (most recent call last):\n  File \"/tmp/ipykernel_3308/367518539.py\", line 8, in <cell line: 0>\n    RESULT=r11.run(PARENT,PILOT_ZIP,R9_ZIP,FIX2_EVIDENCE_ZIP,WORK/'official_runtime',OUTPUT,smoke=False,device=DEVICE)\n  File \"/content/CIDM_v2_B2_R11_P0/sources/b2_r11_backward_attribution.py\", line 205, in run\n    res,st,op=analyze_case(task,core,cache,r6zip,device)\n              ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/content/CIDM_v2_B2_R11_P0/sources/b2_r11_backward_attribution.py\", line 131, in analyze_case\n    if reconstruction_error>1e-4:raise RuntimeError(f'HEAD_PARTITION_GRADIENT_FAILED {task} {name} {reconstruction_error}')\n                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: HEAD_PARTITION_GRADIENT_FAILED swe_2d operator 0.10675963707489294\n"
+}
