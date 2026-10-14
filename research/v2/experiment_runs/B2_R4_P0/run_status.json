@@ -1,0 +1,68 @@
+{
+  "experiment": "CIDM-v2 B2-R4/P0 Decoder Tangent and Operator Span Audit",
+  "status": "FROZEN_TANGENT_DIAGNOSTIC_COMPLETED_NO_TRAINING",
+  "parent_sha256": "69552b29e169ec22ee85d9c1b1a678fdb188f6f25dc18f33b927b88f4dddffd4",
+  "official_baseline_replays": 9,
+  "task_seed_lead_groups": 45,
+  "diagnostic_sample_rows": 360,
+  "interventions": "ORACLE_FUTURE_TRUTH_DIAGNOSTIC_ONLY",
+  "source_of_oracle_information": "Future truth on validation used ONLY to compute gradients and numerical diagnostic reference values, never as a forecast input.",
+  "summary": {
+    "burgers_1d_lead1": {
+      "grad_oracle_ratio_1pct": 0.7242601203421751,
+      "grad_oracle_ratio_5pct": 7.46607428478698,
+      "operator_span_ratio_5pct": 1.29494975010554,
+      "random_ratio_5pct": 1.0481007099151611,
+      "operator_gradient_capture_fraction": 0.15105856132383147,
+      "decoder_saturation_fraction": 0.07373046875
+    },
+    "burgers_1d_lead12": {
+      "grad_oracle_ratio_1pct": 0.8493475678066412,
+      "grad_oracle_ratio_5pct": 1.0806071634093921,
+      "operator_span_ratio_5pct": 1.0524068934222062,
+      "random_ratio_5pct": 1.0303351879119873,
+      "operator_gradient_capture_fraction": 0.02181943888740534,
+      "decoder_saturation_fraction": 0.3826497395833333
+    },
+    "reacdiff_2d_lead1": {
+      "grad_oracle_ratio_1pct": 0.7144577416280905,
+      "grad_oracle_ratio_5pct": 1.7637150834004085,
+      "operator_span_ratio_5pct": 0.8482559149463972,
+      "random_ratio_5pct": 1.026062751809756,
+      "operator_gradient_capture_fraction": 0.043880502421719335,
+      "decoder_saturation_fraction": 0.00214385986328125
+    },
+    "reacdiff_2d_lead12": {
+      "grad_oracle_ratio_1pct": 0.9404538224140803,
+      "grad_oracle_ratio_5pct": 0.7360432222485542,
+      "operator_span_ratio_5pct": 0.9803817346692085,
+      "random_ratio_5pct": 1.0004060864448547,
+      "operator_gradient_capture_fraction": 0.006179235487555464,
+      "decoder_saturation_fraction": 2.9246012369791668e-05
+    },
+    "swe_2d_lead1": {
+      "grad_oracle_ratio_1pct": 0.9837558716535568,
+      "grad_oracle_ratio_5pct": 0.9682093784213066,
+      "operator_span_ratio_5pct": 0.9908156221111616,
+      "random_ratio_5pct": 1.000276933113734,
+      "operator_gradient_capture_fraction": 0.06666815774709296,
+      "decoder_saturation_fraction": 0.032498677571614586
+    },
+    "swe_2d_lead12": {
+      "grad_oracle_ratio_1pct": 0.9552711074550947,
+      "grad_oracle_ratio_5pct": 0.9242642844716707,
+      "operator_span_ratio_5pct": 0.9940540045499802,
+      "random_ratio_5pct": 1.0063146601120632,
+      "operator_gradient_capture_fraction": 0.0005962640534562524,
+      "decoder_saturation_fraction": 0.06317647298177083
+    }
+  },
+  "qualification": "DIAGNOSTIC_ONLY_DOES_NOT_AUTHORIZE_TRAINING",
+  "limits": [
+    "Oracle label-conditioned latent shifts are not deployable and must not be compared to AI Weather Quest models.",
+    "Decoder tangent controllability is local to learned latent coordinates and fixed perturbation budgets.",
+    "Operator-span projection is only three global latent update directions per sample; low dimension limits raw captured fraction.",
+    "Previous B0 checkpoint selection used validation; this is not fresh holdout science.",
+    "No optimizers, no finetuning, no future truth entered model rollout."
+  ]
+}
