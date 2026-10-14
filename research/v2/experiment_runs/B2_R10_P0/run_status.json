@@ -1,0 +1,5 @@
+{
+  "status": "BLOCKED_OFFICIAL_GRADIENT_CREDIT_NO_TRAINING",
+  "exception": "RuntimeError('NONFINITE_HEAD_GRADIENT')",
+  "traceback": "Traceback (most recent call last):\n  File \"/tmp/ipykernel_520/3934120595.py\", line 8, in <cell line: 0>\n    RESULT=credit.run(PARENT,PILOT_ZIP,R9_ZIP,WORK/'official_runtime',OUTPUT,smoke=False,device=DEVICE)\n  File \"/content/CIDM_v2_B2_R10_P0/sources/b2_r10_gradient_credit_audit.py\", line 173, in run\n    r,s=one_case(task,core,cache,r6zip,device)\n        ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/content/CIDM_v2_B2_R10_P0/sources/b2_r10_gradient_credit_audit.py\", line 137, in one_case\n    grad,stats=frozen_gradient(core,head,h,y,scale,(Q if typ=='rotated' else None),horizon)\n               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/content/CIDM_v2_B2_R10_P0/sources/b2_r10_gradient_credit_audit.py\", line 106, in frozen_gradient\n    if not torch.isfinite(vec).all():raise RuntimeError('NONFINITE_HEAD_GRADIENT')\n                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: NONFINITE_HEAD_GRADIENT\n"
+}
