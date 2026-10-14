@@ -1,0 +1,277 @@
+{
+  "experiment": "CIDM_v2_B2_R6_P1_Causal_LocalCoefficient_Qualification",
+  "status": "PILOT_SINGLE_SEED_FAIL_NO_FULL_TRAINING",
+  "q0": {
+    "status": "Q0_ORACLE_GEOMETRY_SUPPORTS_SMALL_PILOT_ONLY",
+    "evidence": {
+      "burgers_1d": {
+        "natural_grad_capture": 0.6334225051105022,
+        "matched_random_grad_capture": 0.03204214177094395,
+        "natural_1pct_pooled": 0.9609963417948136,
+        "matched_random_1pct_pooled": 0.9835776497959208,
+        "prequalified": true
+      },
+      "reacdiff_2d": {
+        "natural_grad_capture": 0.10334828076884146,
+        "matched_random_grad_capture": 0.03123368827315665,
+        "natural_1pct_pooled": 0.9815480784159343,
+        "matched_random_1pct_pooled": 0.9887621340675075,
+        "prequalified": true
+      },
+      "swe_2d": {
+        "natural_grad_capture": 0.15623334857324755,
+        "matched_random_grad_capture": 0.03167821024544532,
+        "natural_1pct_pooled": 0.9870573733980117,
+        "matched_random_1pct_pooled": 0.9927079121859589,
+        "prequalified": true
+      }
+    },
+    "parent_sha256": "69552b29e169ec22ee85d9c1b1a678fdb188f6f25dc18f33b927b88f4dddffd4",
+    "prior_zip_sha256": "0586af4b7f943b546637d828ae24cf38471b802f139138755132ce1e2784a196",
+    "truth_based_oracle_is_not_forecast_skill": true
+  },
+  "reports": [
+    {
+      "task": "burgers_1d",
+      "seed": 17,
+      "updates": 60,
+      "parameters_per_head": 4547,
+      "core_params_trainable": 0,
+      "selection_windows": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "audit_windows": [
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "best_step": {
+        "operator": 20,
+        "rotated": 60
+      },
+      "original_forward_parity_max": 0.0,
+      "audit": {
+        "baseline": {
+          "1": 0.001145071880841897,
+          "3": 0.008208444616229826,
+          "6": 0.01786369655019371,
+          "9": 0.03044052042241674,
+          "12": 0.04830410791328177
+        },
+        "operator": {
+          "1": 0.0011451283711494398,
+          "3": 0.00820872282019991,
+          "6": 0.017860515596112236,
+          "9": 0.030424511729506776,
+          "12": 0.04824225639458746
+        },
+        "rotated": {
+          "1": 0.0011450990615458068,
+          "3": 0.008208366888084129,
+          "6": 0.017861050910141785,
+          "9": 0.0304281874850858,
+          "12": 0.048249491199385375
+        }
+      },
+      "operator_late_to_baseline": 0.9990112314547687,
+      "rotated_late_to_baseline": 0.9991497877043508,
+      "operator_late_to_rotated": 0.9998613258479487,
+      "operator_early_to_baseline": 1.0000357827216888,
+      "gate": "PILOT_NO_LOCAL_ADVANTAGE",
+      "limits": "This validation was used to select the pretrained B0 backbone. Not a fresh outer holdout."
+    },
+    {
+      "task": "reacdiff_2d",
+      "seed": 17,
+      "updates": 60,
+      "parameters_per_head": 4835,
+      "core_params_trainable": 0,
+      "selection_windows": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "audit_windows": [
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "best_step": {
+        "operator": 60,
+        "rotated": 60
+      },
+      "original_forward_parity_max": 0.0,
+      "audit": {
+        "baseline": {
+          "1": 4.432124683262373e-06,
+          "3": 8.521323479726561e-06,
+          "6": 1.3333927768144349e-05,
+          "9": 3.648787605925463e-05,
+          "12": 9.367470647703158e-05
+        },
+        "operator": {
+          "1": 4.428375120824057e-06,
+          "3": 8.521590416421532e-06,
+          "6": 1.3302917523105862e-05,
+          "9": 3.604129551604274e-05,
+          "12": 9.206071808876004e-05
+        },
+        "rotated": {
+          "1": 4.4320823349153216e-06,
+          "3": 8.521312906850653e-06,
+          "6": 1.3330189290172711e-05,
+          "9": 3.645966580734239e-05,
+          "12": 9.357988164993003e-05
+        }
+      },
+      "operator_late_to_baseline": 0.9841692682233852,
+      "rotated_late_to_baseline": 0.9990547584673231,
+      "operator_late_to_rotated": 0.9851004260599548,
+      "operator_early_to_baseline": 0.9997311429590389,
+      "gate": "PILOT_NO_LOCAL_ADVANTAGE",
+      "limits": "This validation was used to select the pretrained B0 backbone. Not a fresh outer holdout."
+    },
+    {
+      "task": "swe_2d",
+      "seed": 17,
+      "updates": 60,
+      "parameters_per_head": 4547,
+      "core_params_trainable": 0,
+      "selection_windows": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "audit_windows": [
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "best_step": {
+        "operator": 40,
+        "rotated": 40
+      },
+      "original_forward_parity_max": 0.0,
+      "audit": {
+        "baseline": {
+          "1": 4.4634336518356577e-05,
+          "3": 0.0003124612594547216,
+          "6": 0.0007889588596299291,
+          "9": 0.0012512335961218923,
+          "12": 0.0018966868228744715
+        },
+        "operator": {
+          "1": 4.463756386030582e-05,
+          "3": 0.00031248596133082174,
+          "6": 0.000788945188105572,
+          "9": 0.001245324980118312,
+          "12": 0.0018749384180409834
+        },
+        "rotated": {
+          "1": 4.463420555111952e-05,
+          "3": 0.00031246217622538097,
+          "6": 0.000788963123341091,
+          "9": 0.001250338857062161,
+          "12": 0.0018908971105702221
+        }
+      },
+      "operator_late_to_baseline": 0.9912141931320213,
+      "rotated_late_to_baseline": 0.997876550079334,
+      "operator_late_to_rotated": 0.9933234657665991,
+      "operator_early_to_baseline": 1.0000782121604532,
+      "gate": "PILOT_NO_LOCAL_ADVANTAGE",
+      "limits": "This validation was used to select the pretrained B0 backbone. Not a fresh outer holdout."
+    }
+  ],
+  "replays": [
+    {
+      "task": "burgers_1d",
+      "seed": 17,
+      "checkpoint_sha256": "f3ed74a10921fabaa37de81df78223e10eaa441ec44034373b9c593ba89166a0",
+      "archived_rmse12": 0.13152127036229722,
+      "replay_rmse12": 0.13152127272268235
+    },
+    {
+      "task": "reacdiff_2d",
+      "seed": 17,
+      "checkpoint_sha256": "90da24883ec08052573c211dbeae0ef4ad4f72b8f931e010bb63528e9c766c3b",
+      "archived_rmse12": 0.00541317315776709,
+      "replay_rmse12": 0.0054131731017620635
+    },
+    {
+      "task": "swe_2d",
+      "seed": 17,
+      "checkpoint_sha256": "97cea4edadab4605f27f9c51631930146462e71ae39eb697cbe6393fd8414615",
+      "archived_rmse12": 0.03166764698996222,
+      "replay_rmse12": 0.031667646607028935
+    }
+  ],
+  "frozen_parent": true,
+  "parent_sha256": "69552b29e169ec22ee85d9c1b1a678fdb188f6f25dc18f33b927b88f4dddffd4",
+  "no_future_truth_in_forward": true,
+  "training_labels_only_from_official_train": true,
+  "deployment_safety": "No future truth used in inference/closed loop; no truth-informed oracle policy applied.",
+  "training_contract": "Seed17, budget-matched operator vs orthogonally rotated equal-rank control, frozen core, no formal training",
+  "limitations": [
+    "Original B0 checkpoint was val-selected; no fresh outer holdout.",
+    "Truncated-gradient BPTT(1) gives actual closed-loop rollouts but approximate gradients.",
+    "Different basis geometry is not strict causality proof; parameter count and operator local Gram matched.",
+    "No full multi-seed retraining nor eight-PDE superiority nor AI Weather Quest RPSS qualification."
+  ]
+}
