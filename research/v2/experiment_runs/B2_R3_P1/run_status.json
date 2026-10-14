@@ -1,0 +1,196 @@
+{
+  "experiment": "CIDM-v2 B2-R3/P1 FROZEN BACKBONE READOUT SUFFICIENCY PILOT",
+  "status": "SINGLE_SEED_PILOT_COMPLETED_NOT_FULL_TRAINING",
+  "parent_hash": "69552b29e169ec22ee85d9c1b1a678fdb188f6f25dc18f33b927b88f4dddffd4",
+  "trained_backbone_steps": 0,
+  "pilot_probe_updates_per_head_per_task": 100,
+  "task_seed_count": 3,
+  "results": [
+    {
+      "task": "burgers_1d",
+      "seed": 17,
+      "updates": 100,
+      "core_frozen": true,
+      "matched_probe_params": 4369,
+      "selection_windows": 16,
+      "audit_windows": 16,
+      "best_step": {
+        "observable": 100,
+        "latent": 100
+      },
+      "audit": {
+        "baseline": {
+          "1": 0.0011450718302512541,
+          "3": 0.008208444342017174,
+          "6": 0.017863696441054344,
+          "9": 0.030440516769886017,
+          "12": 0.04830412194132805,
+          "late_mse": 0.03937231935560703,
+          "all_mse": 0.02119237026490737
+        },
+        "observable": {
+          "1": 0.001218376390170306,
+          "3": 0.00808143022004515,
+          "6": 0.017528077587485313,
+          "9": 0.030196575447916985,
+          "12": 0.04814802296459675,
+          "late_mse": 0.039172299206256866,
+          "all_mse": 0.0210344965220429
+        },
+        "latent": {
+          "1": 0.001078354602213949,
+          "3": 0.007119687274098396,
+          "6": 0.016436617355793715,
+          "9": 0.030516556464135647,
+          "12": 0.04887908324599266,
+          "late_mse": 0.039697819855064154,
+          "all_mse": 0.020806059788446872
+        }
+      },
+      "late_ratios": {
+        "observable": 0.9949197773302709,
+        "latent": 1.0082672421839627
+      },
+      "latent_vs_observable_late_ratio": 1.013415619186411,
+      "qualifier": "SINGLE_SEED_READOUT_PILOT_ONLY"
+    },
+    {
+      "task": "reacdiff_2d",
+      "seed": 17,
+      "updates": 100,
+      "core_frozen": true,
+      "matched_probe_params": 5042,
+      "selection_windows": 16,
+      "audit_windows": 16,
+      "best_step": {
+        "observable": 100,
+        "latent": 100
+      },
+      "audit": {
+        "baseline": {
+          "1": 4.432124626418954e-06,
+          "3": 8.521323820787075e-06,
+          "6": 1.3333927881831187e-05,
+          "9": 3.648787696874933e-05,
+          "12": 9.367470738652628e-05,
+          "late_mse": 6.50812921776378e-05,
+          "all_mse": 3.1289992136862566e-05
+        },
+        "observable": {
+          "1": 4.722426353964693e-06,
+          "3": 9.81182995474228e-06,
+          "6": 1.3404493643065507e-05,
+          "9": 2.792297868836613e-05,
+          "12": 7.273160099430243e-05,
+          "late_mse": 5.032728984133428e-05,
+          "all_mse": 2.5718665926888207e-05
+        },
+        "latent": {
+          "1": 4.6764001808696776e-06,
+          "3": 9.812023222366406e-06,
+          "6": 1.4638004586231546e-05,
+          "9": 2.528599725337699e-05,
+          "12": 6.449547163356328e-05,
+          "late_mse": 4.489073444347014e-05,
+          "all_mse": 2.378157937528158e-05
+        }
+      },
+      "late_ratios": {
+        "observable": 0.7732988721853764,
+        "latent": 0.689764031128054
+      },
+      "latent_vs_observable_late_ratio": 0.8919759952303443,
+      "qualifier": "SINGLE_SEED_READOUT_PILOT_ONLY"
+    },
+    {
+      "task": "swe_2d",
+      "seed": 17,
+      "updates": 100,
+      "core_frozen": true,
+      "matched_probe_params": 4369,
+      "selection_windows": 16,
+      "audit_windows": 16,
+      "best_step": {
+        "observable": 100,
+        "latent": 100
+      },
+      "audit": {
+        "baseline": {
+          "1": 4.463433742785128e-05,
+          "3": 0.0003124612740066368,
+          "6": 0.0007889588960097171,
+          "9": 0.0012512336543295532,
+          "12": 0.0018966868374263868,
+          "late_mse": 0.00157396024587797,
+          "all_mse": 0.0008587949998400291
+        },
+        "observable": {
+          "1": 5.3512969770963537e-05,
+          "3": 0.0002533350598241668,
+          "6": 0.0006076941062929109,
+          "9": 0.000970363114902284,
+          "12": 0.0015463660965906456,
+          "late_mse": 0.0012583646057464648,
+          "all_mse": 0.0006862542694761941
+        },
+        "latent": {
+          "1": 5.3475879212783184e-05,
+          "3": 0.00022812997849541716,
+          "6": 0.0005959784466540441,
+          "9": 0.0009870195281109773,
+          "12": 0.0015999853349057958,
+          "late_mse": 0.0012935024315083865,
+          "all_mse": 0.0006929178334758035
+        }
+      },
+      "late_ratios": {
+        "observable": 0.7994894464723517,
+        "latent": 0.8218139148659747
+      },
+      "latent_vs_observable_late_ratio": 1.027923405983815,
+      "qualifier": "SINGLE_SEED_READOUT_PILOT_ONLY"
+    }
+  ],
+  "q0": {
+    "gate": "PILOT_ALLOWED",
+    "evidence": {
+      "burgers_bad_direction": true,
+      "swe_underresponse": true,
+      "rd_direction_better_than_burgers": true
+    },
+    "three_task_lead12": {
+      "burgers_1d": {
+        "pred_increment_cos_truth": 0.088787,
+        "pred_increment_power_ratio": 2.466405,
+        "self_reencode_increment_gap_rel": 0.883004
+      },
+      "reacdiff_2d": {
+        "pred_increment_cos_truth": 0.483481,
+        "pred_increment_power_ratio": 2.068328,
+        "self_reencode_increment_gap_rel": 1.487431
+      },
+      "swe_2d": {
+        "pred_increment_cos_truth": 0.470052,
+        "pred_increment_power_ratio": 0.380282,
+        "self_reencode_increment_gap_rel": 0.761209
+      }
+    },
+    "source_sha256": "3ce20d5940b2baf1b01f56f6e500adbc9c328be961658df4d5a41e0ba24b5086",
+    "parent_sha256": "69552b29e169ec22ee85d9c1b1a678fdb188f6f25dc18f33b927b88f4dddffd4"
+  },
+  "qualification": "NO_CIDM_V2_FULL_MODEL_QUALIFICATION",
+  "evidence_limits": [
+    "Readout probes are trainable small models; results are not frozen counterfactuals.",
+    "Seed17 only; no multi-seed confirmation or formal v1 comparison.",
+    "Validation halves used separately for checkpoint selection and independent pilot audit.",
+    "Decoder-correction probes do not feed corrections back to backbone, so no closed-loop architecture inference.",
+    "Test labels are not used for training/selection; test split only strict baseline model replay."
+  ],
+  "pilot_gate": "PILOT_NO_UNIFIED_LATENT_SPECIFIC_GAIN",
+  "pilot_gate_policy": {
+    "burgers_and_swe_latent_gain_vs_base_min": 0.03,
+    "burgers_and_swe_latent_gain_vs_matched_obs_min": 0.02,
+    "rd_max_regression_vs_base": 0.02,
+    "pilot_is_not_architecture_gate": true
+  }
+}
