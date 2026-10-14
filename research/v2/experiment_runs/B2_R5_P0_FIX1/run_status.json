@@ -1,0 +1,85 @@
+{
+  "experiment": "CIDM-v2 B2-R5/P0 Spatial vs Global Operator Span Retrospective Audit",
+  "status": "FROZEN_SPATIAL_SPAN_AUDIT_COMPLETED_NO_TRAINING",
+  "baseline_replays": 9,
+  "groups": 45,
+  "sample_rows": 360,
+  "budgets": [
+    0.001,
+    0.003,
+    0.01,
+    0.03,
+    0.05
+  ],
+  "methods": [
+    "full",
+    "global3",
+    "spatial3",
+    "random_spatial3",
+    "random_ambient"
+  ],
+  "validation_indices": [
+    8,
+    15
+  ],
+  "future_truth_use": "ONLY retrospective gradients and oracle line search; NEVER deployment",
+  "metric_warning": "Use pooled=sum(after)/sum(before) as primary error ratio. Unweighted macro(sample ratios) is susceptible to tiny baseline errors.",
+  "interpretation_warning": "spatial3 has 3 local coefficients per pixel rather than 3 global coefficients; compare against dimension-matched random_spatial3 oracle. Local oracle does NOT train causal coefficients.",
+  "qualification": "DIAGNOSTIC_ONLY_NO_TRAINING_PERMISSION",
+  "lead12": {
+    "burgers_1d": {
+      "samples": 24,
+      "grad_global3_frac": 0.009881940726700122,
+      "grad_spatial3_frac": 0.6334225051105022,
+      "grad_random_spatial3_frac": 0.032042141770944,
+      "spatial_operator_mean_rank": 3.0,
+      "decoder_abslogit_gt2": 0.3297526041666667,
+      "full_0.01_pooled": 0.9590089590384535,
+      "full_0.01_macro": 0.9537724107503891,
+      "global3_0.01_pooled": 0.9867386070362572,
+      "global3_0.01_macro": 0.9679949333270391,
+      "spatial3_0.01_pooled": 0.9609963417948135,
+      "spatial3_0.01_macro": 0.9684585755070051,
+      "random_spatial3_0.01_pooled": 0.9835776497959208,
+      "random_spatial3_0.01_macro": 0.949126236140728,
+      "random_ambient_0.01_pooled": 1.000262734944461,
+      "random_ambient_0.01_macro": 1.0029208461443584
+    },
+    "reacdiff_2d": {
+      "samples": 24,
+      "grad_global3_frac": 0.006875051622046158,
+      "grad_spatial3_frac": 0.1033482807688415,
+      "grad_random_spatial3_frac": 0.031233688273156684,
+      "spatial_operator_mean_rank": 3.0,
+      "decoder_abslogit_gt2": 3.4332275390625e-05,
+      "full_0.01_pooled": 0.9373436015185956,
+      "full_0.01_macro": 0.9398467168211937,
+      "global3_0.01_pooled": 0.9960246984195822,
+      "global3_0.01_macro": 0.9958863854408264,
+      "spatial3_0.01_pooled": 0.9815480784159342,
+      "spatial3_0.01_macro": 0.9812120472391447,
+      "random_spatial3_0.01_pooled": 0.9887621340675072,
+      "random_spatial3_0.01_macro": 0.9891844565669695,
+      "random_ambient_0.01_pooled": 1.0000160486089915,
+      "random_ambient_0.01_macro": 1.0000159020225208
+    },
+    "swe_2d": {
+      "samples": 24,
+      "grad_global3_frac": 0.0007913301202885729,
+      "grad_spatial3_frac": 0.15623334857324758,
+      "grad_random_spatial3_frac": 0.03167821024544537,
+      "spatial_operator_mean_rank": 2.7743148803710938,
+      "decoder_abslogit_gt2": 0.06966908772786458,
+      "full_0.01_pooled": 0.9802374935849235,
+      "full_0.01_macro": 0.9611406251788139,
+      "global3_0.01_pooled": 0.9987462815436984,
+      "global3_0.01_macro": 0.9974649176001549,
+      "spatial3_0.01_pooled": 0.9870573733980113,
+      "spatial3_0.01_macro": 0.9747258052229881,
+      "random_spatial3_0.01_pooled": 0.9927079121859586,
+      "random_spatial3_0.01_macro": 0.9851205671826998,
+      "random_ambient_0.01_pooled": 1.0001016140310965,
+      "random_ambient_0.01_macro": 1.0002571145693462
+    }
+  }
+}
