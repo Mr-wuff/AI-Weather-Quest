@@ -1,0 +1,5 @@
+{
+  "status": "BLOCKED_NO_TRAINING",
+  "exception": "FileNotFoundError(2, 'No such file or directory')",
+  "traceback": "Traceback (most recent call last):\n  File \"/tmp/ipykernel_1210/757725838.py\", line 21, in <cell line: 0>\n    final_report=exact_probe.run(str(parent_zip),REPORT,root_dir=WORK/'official_runtime',max_val_windows=16,smoke=False)\n  File \"/content/b2_r2_fix5_exact_dynamics.py\", line 149, in run\n    assert sha256(pathlib.Path(__file__).with_name('b2_r1_flux_control.py'))==SOURCE_HASH,'FIX2_DRIVER_SHA256_MISMATCH'\n           ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/content/b2_r2_fix5_exact_dynamics.py\", line 138, in sha256\n    with open(path,'rb') as f:\n         ~~~~^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: '/content/b2_r1_flux_control.py'\n"
+}
