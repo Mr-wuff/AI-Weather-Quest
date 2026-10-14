@@ -1,0 +1,75 @@
+{
+  "experiment": "CIDM_v2_B2_R10_P0_GradientCreditHorizon",
+  "status": "FROZEN_GRADIENT_CREDIT_AUDIT_COMPLETED_NO_TRAINING",
+  "training_steps": 0,
+  "data_used_for_qualification": "TRAIN only",
+  "rows": 18,
+  "cases": [
+    {
+      "task": "burgers_1d",
+      "batch_indices": [
+        0,
+        1
+      ],
+      "examples": 2,
+      "core_trainable": 0,
+      "heads_updated": 0,
+      "reference_full_gradient_is_forecast_skill": false,
+      "parent_replay": {
+        "task": "burgers_1d",
+        "seed": 17,
+        "checkpoint_sha256": "f3ed74a10921fabaa37de81df78223e10eaa441ec44034373b9c593ba89166a0",
+        "archived_rmse12": 0.13152127036229722,
+        "replay_rmse12": 0.13152127272268235
+      }
+    },
+    {
+      "task": "reacdiff_2d",
+      "batch_indices": [
+        0,
+        1
+      ],
+      "examples": 2,
+      "core_trainable": 0,
+      "heads_updated": 0,
+      "reference_full_gradient_is_forecast_skill": false,
+      "parent_replay": {
+        "task": "reacdiff_2d",
+        "seed": 17,
+        "checkpoint_sha256": "90da24883ec08052573c211dbeae0ef4ad4f72b8f931e010bb63528e9c766c3b",
+        "archived_rmse12": 0.00541317315776709,
+        "replay_rmse12": 0.0054131731017620635
+      }
+    },
+    {
+      "task": "swe_2d",
+      "batch_indices": [
+        0,
+        1
+      ],
+      "examples": 2,
+      "core_trainable": 0,
+      "heads_updated": 0,
+      "reference_full_gradient_is_forecast_skill": false,
+      "parent_replay": {
+        "task": "swe_2d",
+        "seed": 17,
+        "checkpoint_sha256": "97cea4edadab4605f27f9c51631930146462e71ae39eb697cbe6393fd8414615",
+        "archived_rmse12": 0.03166764698996222,
+        "replay_rmse12": 0.031667646607028935
+      }
+    }
+  ],
+  "gradient_horizons": [
+    1,
+    3,
+    12
+  ],
+  "official_full_pde_replay": true,
+  "numerical_fix": "sqrt pre-clamp preserved + FP64 post-backward gradient-norm accounting, no clipping",
+  "r9_evidence_sha256": "3b90fded1769d199da2a8ca93e1505acc451d074f4e45e8c720be3a15861389f",
+  "r6_evidence_sha256": "d923eb6af43c294f28ec4f236c707feb0c4bcf1e6e5fed519bf697599730ef89",
+  "original_parent_sha256": "69552b29e169ec22ee85d9c1b1a678fdb188f6f25dc18f33b927b88f4dddffd4",
+  "no_outer_holdout": true,
+  "explanation": "K=12 is an exact autograd reference for the same 12-step loss; it is not a trained model improvement."
+}
