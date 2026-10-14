@@ -1,0 +1,21 @@
+{
+  "experiment": "CIDM-v2 B2-R2/P0 FIX5",
+  "status": "FROZEN_DIAGNOSTIC_COMPLETED_NO_TRAINING",
+  "official_data": "MD5_VERIFIED_BY_CANONICAL_BENCHMARK",
+  "replay_models": 9,
+  "covered_family_seed_leads": 45,
+  "expected_family_seed_leads": 45,
+  "raw_batch_lead_rows": 270,
+  "missing_coverage": [],
+  "max_additive_relative_residual": 2.659548949283678e-07,
+  "max_forward_abs_difference": 0.0,
+  "stage": "FROZEN_DIAGNOSTIC_ONLY",
+  "train_steps": 0,
+  "qualification": "NOT_EVALUATED",
+  "notice": "Lead metrics are on validation windows; test was used only for archived baseline replay, not candidate selection.",
+  "scientific_limits": [
+    "Frozen effects are local single-step counterfactuals, not a retrained or full-rollout ablation.",
+    "Latent values depend on learned coordinates; no direct physical conservation conclusion.",
+    "No hyperparameter search or performance-improvement claim; only mechanism diagnosis."
+  ]
+}
