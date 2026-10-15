@@ -1,0 +1,22 @@
+# CIDM-v2 B2-R11 FIX1 actual results and preregistered B2-R12 dual precision full-chain audit (2026-10-15)
+
+## Direct original evidence (uploaded by user)
+- Report ZIP `CIDM_v2_B2_R11_P0_FIX1_GRADIENT_RECONSTRUCTION_REPORTS.zip` SHA256 **`b37e0539102afb4047028db72b8c93f32305f81adbd42551e0e3fcedb0eb9a6d`**, user sidecar matches, CRC PASS and all original 3 seed17 B0 checkpoint RMSE replays PASS.
+- `report.json.status=FROZEN_ATTRIBUTION_DATA_COLLECTED_NUMERIC_GATE_FAIL_NO_TRAINING`. Six of six PDE×controller case groups, 72 temporal head contributions, 72 local operator VJP records. Zero training updates. **Numerical gate FAIL (1e-4 threshold unchanged).**
+- SWE Natural FP64-reduced per-step controller gradient reconstruction relative error **0.0739514626796376** (7.395%); Rotated **0.003706336689429864** (0.371%). FP32 and FP64 *sum of original FP32 parts* yield effectively identical errors; cancellation conditions **1.001748** and **1.001032**, ruling out simple reduction precision or major inter-step cancellation as primary explanations. Independent local-head FP64 replay (with fixed FP32 upstream cotangent) gave relative errors 1.3418 and 0.05339, **NOT** full double-precision chained backprop.
+- SWE Natural full controller gradient L2 `3.784715e20`, Step1 contribution `3.778077e20`, Step9-12 contribution norm sum `8.489e-5`; rotated corresponding full gradient `2.269435e14`, first-step `2.268062e14`. Early controller calls dominate complete 12-step adjoints.
+- SWE Natural Step1 Flux VJP L2 `3.901319e31`, identity direct `2.944684e28`, Local `9.05233e26`, Skew `1.06534e27`; local VJP consistency ~5e-8 across all 72 rows. These values are endogenous-cotangent local VJP norms, **NOT spectral Jacobian norms, causal ablations or evidence that Flux is the only cause**.
+- HF Model ZIP/sha/source and GitHub source/release/status **SUCCESS per uploaded runtime sync log**; linked Release contains a numeric-Gate FAIL report, not a passed experiment.
+
+## B2-R12/P0 new zero-training Notebook delivered to user
+Self-contained `CIDM_v2_B2_R12_P0_DualPrecisionChain_Colab_STANDALONE.ipynb`, new source `b2_r12_dual_precision_chain.py` SHA256 `3b338d5b7c92c2cbef672212540c344163b9acd0efd62f8d1637daba38ca0294`; complete archived original exact source and six real trained heads, R7/R8/R9/R10 FIX2 original evidence, **actual R11 FIX1 ZIP SHA pin**. Parent B0-R1 18-run ZIP original SHA `69552b29e169ec22ee85d9c1b1a678fdb188f6f25dc18f33b927b88f4dddffd4` enforced; official PDEBench MD5 + seed17 checkpoint replay fail closed; no Google Drive.
+- **Whole-chain** 12-step FP32-vs-FP64 forward and autograd; 3 PDE × Natural/Rotated × both dtypes = 12 official cases, 144 operator VJP timestep rows, TRAIN first two windows only, no optimizer step or altered physics.
+- Enforce strict **1e-4** per-head temporal partition reconstruction in either precision. Also record full-gradient cosine, relative gradient delta, per-step Flux/Local/Skew cotangent VJPs and 12-step forecast trajectory divergence. If FP64 trajectory diverges from FP32, gradients do **not** represent the same numerical path—never interpret as pure roundoff error.
+- Fail closed on missing parent, wrong data MD5, nonfinite gradient, wrong replay/CRC/evidence; report status differentiates diagnostic completed vs numeric Gate pass; *no training is ever authorized*.
+- Runtime attempts HF **Model** results/source, GitHub Release/source/status, browser ZIP/SHA download when credentials permit.
+
+## Program-only execution verification
+The entire 15-executable-cell Notebook ran locally under CPU smoke including real original source hashes and all six actual old trained head weights restored; 1D Natural and 2D Rotated tested in both FP32 and FP64, 4 precision case rows and 48 VJP rows, valid ZIP SHA/CRC; FP64 per-head partition numerical residual ~1e-16 and no forward mismatch in these **synthetic** samples. **Official B2-R12/P0 has not been run**; no inference yet on actual SWE long-chain FP64 stability.
+
+## Research status
+CIDM-v2 possesses credible local operator geometry and limited single-seed causal correction signals, but original v2 failed cross-PDE superiority over v1 for Burgers/SWE, and long-horizon SWE backprop is ill-conditioned. Neither full-v2 multi-seed retraining nor AI Weather Quest RPSS qualification is authorized. Next decision after official B2-R12 is a carefully isolated path-local numerical/conditioning experiment; no automatic BPTT(3) or causal training.
