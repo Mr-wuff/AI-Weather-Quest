@@ -1,0 +1,75 @@
+{
+  "status": "FROZEN_MEMORY_NECESSITY_COMPLETED_NO_TRAINING",
+  "train_allowed": false,
+  "strict_historical_replays": [
+    {
+      "task": "reacdiff_2d",
+      "archived_mse_max_rel_diff": 6.975510204669594e-13,
+      "full_controller_forecast_max_abs_diff": 0.0,
+      "rows_checked": 320
+    },
+    {
+      "task": "swe_2d",
+      "archived_mse_max_rel_diff": 7.238875843605391e-13,
+      "full_controller_forecast_max_abs_diff": 0.0,
+      "rows_checked": 320
+    }
+  ],
+  "results": {
+    "reacdiff_2d": {
+      "late_mse": {
+        "baseline": 6.508129149551678e-05,
+        "mhc_hierarchical__blend_equal_rms": 6.460003817210236e-05,
+        "mhc_hierarchical__blend_half": 6.462003545948392e-05,
+        "mhc_hierarchical__full": 6.463592490035808e-05,
+        "mhc_hierarchical__reset": 6.461797084966747e-05,
+        "mhc_hierarchical__reset_equal_rms": 6.459124699631502e-05,
+        "mhc_no_aux__blend_equal_rms": 6.460407706754268e-05,
+        "mhc_no_aux__blend_half": 6.462381341520995e-05,
+        "mhc_no_aux__full": 6.464015874030338e-05,
+        "mhc_no_aux__reset": 6.462165117682162e-05,
+        "mhc_no_aux__reset_equal_rms": 6.459528347591004e-05,
+        "trained_stateless": 6.463401712153427e-05
+      },
+      "mhc_factual_gain_pct": 0.6843235358803268,
+      "original_stateless_gain_pct": 0.687254914130464,
+      "memory_removal_late_deterioration_pct": -0.027777200865131135,
+      "memory_removal_equal_rms_deterioration_pct": -0.06912240230479982,
+      "memory_reset_worse_windows": 0,
+      "memory_reset_equal_rms_worse_windows": 0,
+      "windows": 16
+    },
+    "swe_2d": {
+      "late_mse": {
+        "baseline": 0.0015739601467430475,
+        "mhc_hierarchical__blend_equal_rms": 0.0015700185640525888,
+        "mhc_hierarchical__blend_half": 0.0015699686796324386,
+        "mhc_hierarchical__full": 0.0015697096810072253,
+        "mhc_hierarchical__reset": 0.0015699963114457205,
+        "mhc_hierarchical__reset_equal_rms": 0.0015700335166002333,
+        "mhc_no_aux__blend_equal_rms": 0.0015699146456427115,
+        "mhc_no_aux__blend_half": 0.0015698653669460327,
+        "mhc_no_aux__full": 0.0015695941456215223,
+        "mhc_no_aux__reset": 0.0015699003347435792,
+        "mhc_no_aux__reset_equal_rms": 0.0015699355722063046,
+        "trained_stateless": 0.0015702477562626882
+      },
+      "mhc_factual_gain_pct": 0.27004913336704517,
+      "original_stateless_gain_pct": 0.23586305460410184,
+      "memory_removal_late_deterioration_pct": 0.01826009242111848,
+      "memory_removal_equal_rms_deterioration_pct": 0.020630285773615142,
+      "memory_reset_worse_windows": 15,
+      "memory_reset_equal_rms_worse_windows": 15,
+      "windows": 16
+    }
+  },
+  "updates": 0,
+  "contract": "MHC trained-head fixed; intervention acts only on slow/fast readout, not original z update; equal RMS matched using factual causal action only",
+  "limits": [
+    "seed17 only",
+    "all windows are reused original parent validation not unseen outer test",
+    "no independent physical Markov sufficiency proof",
+    "frozen necessity not new trainable architectural advantage",
+    "no burgers Q1 head because Burgers failed prior A0-FIX1 Q0"
+  ]
+}
