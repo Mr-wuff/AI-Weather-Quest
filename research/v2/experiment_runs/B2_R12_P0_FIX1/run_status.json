@@ -1,0 +1,47 @@
+{
+  "experiment": "CIDM_v2_B2_R12_P0_FIX1_MemoryBoundedDualPrecision",
+  "status": "FROZEN_DUAL_PRECISION_FIX1_COMPLETED_NO_TRAINING",
+  "case_rows": 12,
+  "time_rows": 144,
+  "cases": [
+    {
+      "task": "burgers_1d",
+      "archived_B0_checkpoint_replay": {
+        "task": "burgers_1d",
+        "seed": 17,
+        "checkpoint_sha256": "f3ed74a10921fabaa37de81df78223e10eaa441ec44034373b9c593ba89166a0",
+        "archived_rmse12": 0.13152127036229722,
+        "replay_rmse12": 0.13152127272268235
+      },
+      "heads": 2
+    },
+    {
+      "task": "reacdiff_2d",
+      "archived_B0_checkpoint_replay": {
+        "task": "reacdiff_2d",
+        "seed": 17,
+        "checkpoint_sha256": "90da24883ec08052573c211dbeae0ef4ad4f72b8f931e010bb63528e9c766c3b",
+        "archived_rmse12": 0.00541317315776709,
+        "replay_rmse12": 0.0054131731017620635
+      },
+      "heads": 2
+    },
+    {
+      "task": "swe_2d",
+      "archived_B0_checkpoint_replay": {
+        "task": "swe_2d",
+        "seed": 17,
+        "checkpoint_sha256": "97cea4edadab4605f27f9c51631930146462e71ae39eb697cbe6393fd8414615",
+        "archived_rmse12": 0.03166764698996222,
+        "replay_rmse12": 0.031667646607028935
+      },
+      "heads": 2
+    }
+  ],
+  "prior_R11_FIX1_SHA256": "b37e0539102afb4047028db72b8c93f32305f81adbd42551e0e3fcedb0eb9a6d",
+  "original_parent_frozen": true,
+  "updates": 0,
+  "train_allowed": false,
+  "numeric_gate": true,
+  "not_independent_external_holdout": true
+}
