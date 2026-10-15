@@ -1,0 +1,6 @@
+{
+  "status": "BLOCKED_MHC_A0_PREQUALIFICATION_NO_TRAINING",
+  "train_allowed": false,
+  "error": "AssertionError(('BASELINE_R9_PARITY_FAIL', 0.0014233589172363281))",
+  "traceback": "Traceback (most recent call last):\n  File \"/tmp/ipykernel_2260/762370468.py\", line 8, in <cell line: 0>\n    MHC_RESULT=mhc.run(PARENT,WORK/'official_runtime_mhc',OUTPUT,smoke=False)\n  File \"/content/CIDM_v2_MHC_A0/sources/cidm_mhc_a0_qualification.py\", line 371, in run\n    precert=q0(core,heads,cache,task,device,output,smoke=smoke)\n  File \"/content/CIDM_v2_MHC_A0/sources/cidm_mhc_a0_qualification.py\", line 228, in q0\n    assert baseline_parity<=2e-6,('BASELINE_R9_PARITY_FAIL',baseline_parity)\n           ^^^^^^^^^^^^^^^^^^^^^\nAssertionError: ('BASELINE_R9_PARITY_FAIL', 0.0014233589172363281)\n"
+}
