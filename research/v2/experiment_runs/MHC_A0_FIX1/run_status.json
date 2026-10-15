@@ -1,0 +1,45 @@
+{
+  "status": "MHC_FIX1_Q0_OR_RESOURCE_GATE_FAIL_NO_FORMAL_TRAINING",
+  "mode": "official_small_pilot",
+  "task_groups": [
+    {
+      "task": "burgers_1d",
+      "q0": false,
+      "head_params": {
+        "stateless_closure": 5250,
+        "mhc_hierarchical": 5250,
+        "mhc_no_aux": 5250
+      },
+      "device": "cuda"
+    },
+    {
+      "task": "reacdiff_2d",
+      "q0": true,
+      "head_params": {
+        "stateless_closure": 5538,
+        "mhc_hierarchical": 5538,
+        "mhc_no_aux": 5538
+      },
+      "device": "cuda"
+    },
+    {
+      "task": "swe_2d",
+      "q0": true,
+      "head_params": {
+        "stateless_closure": 5250,
+        "mhc_hierarchical": 5250,
+        "mhc_no_aux": 5250
+      },
+      "device": "cuda"
+    }
+  ],
+  "completed_pilot_tasks": [
+    "reacdiff_2d",
+    "swe_2d"
+  ],
+  "updates_per_head": 24,
+  "full_model_updates": 0,
+  "q0_witness_reset_before_q1": true,
+  "train_allowed": false,
+  "data_contract": "original B0 official parent and original split; no test-set pilot tuning; authoritative canonical z and TRAIN-only Q0 line-search"
+}
