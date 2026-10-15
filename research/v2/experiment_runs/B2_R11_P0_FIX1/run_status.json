@@ -1,0 +1,51 @@
+{
+  "experiment": "CIDM_v2_B2_R11_P0_BackwardPathAttribution",
+  "status": "FROZEN_ATTRIBUTION_DATA_COLLECTED_NUMERIC_GATE_FAIL_NO_TRAINING",
+  "cases": [
+    {
+      "task": "burgers_1d",
+      "parent_replay": {
+        "task": "burgers_1d",
+        "seed": 17,
+        "checkpoint_sha256": "f3ed74a10921fabaa37de81df78223e10eaa441ec44034373b9c593ba89166a0",
+        "archived_rmse12": 0.13152127036229722,
+        "replay_rmse12": 0.13152127272268235
+      },
+      "rows": 2,
+      "exact_model_frozen": true
+    },
+    {
+      "task": "reacdiff_2d",
+      "parent_replay": {
+        "task": "reacdiff_2d",
+        "seed": 17,
+        "checkpoint_sha256": "90da24883ec08052573c211dbeae0ef4ad4f72b8f931e010bb63528e9c766c3b",
+        "archived_rmse12": 0.00541317315776709,
+        "replay_rmse12": 0.0054131731017620635
+      },
+      "rows": 2,
+      "exact_model_frozen": true
+    },
+    {
+      "task": "swe_2d",
+      "parent_replay": {
+        "task": "swe_2d",
+        "seed": 17,
+        "checkpoint_sha256": "97cea4edadab4605f27f9c51631930146462e71ae39eb697cbe6393fd8414615",
+        "archived_rmse12": 0.03166764698996222,
+        "replay_rmse12": 0.031667646607028935
+      },
+      "rows": 2,
+      "exact_model_frozen": true
+    }
+  ],
+  "number_of_controllers": 6,
+  "temporal_rows": 72,
+  "vjp_rows": 72,
+  "original_fix2_sha256": "bfc54b95d54714eee6ddd1ef3f1d158418f26f8e00a5fc42faf0b8cc5eeba6bc",
+  "training_updates": 0,
+  "no_outer_holdout": true,
+  "train_allowed": false,
+  "strict_numerical_gate_pass": false,
+  "attribution": "exact decomposition of the frozen head gradient and local VJPs; no weights changed"
+}
