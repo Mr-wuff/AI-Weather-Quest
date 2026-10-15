@@ -1,0 +1,77 @@
+{
+  "experiment": "CIDM_v2_B2_R13_P0_SameStateLocalJacobian",
+  "status": "FROZEN_SAME_STATE_VJP_COMPLETED_NO_TRAINING",
+  "cases": [
+    {
+      "task": "burgers_1d",
+      "controller": "operator",
+      "parent_replay": {
+        "task": "burgers_1d",
+        "seed": 17,
+        "checkpoint_sha256": "f3ed74a10921fabaa37de81df78223e10eaa441ec44034373b9c593ba89166a0",
+        "archived_rmse12": 0.13152127036229722,
+        "replay_rmse12": 0.13152128924537734
+      }
+    },
+    {
+      "task": "burgers_1d",
+      "controller": "rotated",
+      "parent_replay": {
+        "task": "burgers_1d",
+        "seed": 17,
+        "checkpoint_sha256": "f3ed74a10921fabaa37de81df78223e10eaa441ec44034373b9c593ba89166a0",
+        "archived_rmse12": 0.13152127036229722,
+        "replay_rmse12": 0.13152128924537734
+      }
+    },
+    {
+      "task": "reacdiff_2d",
+      "controller": "operator",
+      "parent_replay": {
+        "task": "reacdiff_2d",
+        "seed": 17,
+        "checkpoint_sha256": "90da24883ec08052573c211dbeae0ef4ad4f72b8f931e010bb63528e9c766c3b",
+        "archived_rmse12": 0.00541317315776709,
+        "replay_rmse12": 0.005413172891743211
+      }
+    },
+    {
+      "task": "reacdiff_2d",
+      "controller": "rotated",
+      "parent_replay": {
+        "task": "reacdiff_2d",
+        "seed": 17,
+        "checkpoint_sha256": "90da24883ec08052573c211dbeae0ef4ad4f72b8f931e010bb63528e9c766c3b",
+        "archived_rmse12": 0.00541317315776709,
+        "replay_rmse12": 0.005413172891743211
+      }
+    },
+    {
+      "task": "swe_2d",
+      "controller": "operator",
+      "parent_replay": {
+        "task": "swe_2d",
+        "seed": 17,
+        "checkpoint_sha256": "97cea4edadab4605f27f9c51631930146462e71ae39eb697cbe6393fd8414615",
+        "archived_rmse12": 0.03166764698996222,
+        "replay_rmse12": 0.03166764695166889
+      }
+    },
+    {
+      "task": "swe_2d",
+      "controller": "rotated",
+      "parent_replay": {
+        "task": "swe_2d",
+        "seed": 17,
+        "checkpoint_sha256": "97cea4edadab4605f27f9c51631930146462e71ae39eb697cbe6393fd8414615",
+        "archived_rmse12": 0.03166764698996222,
+        "replay_rmse12": 0.03166764695166889
+      }
+    }
+  ],
+  "rows": 120,
+  "windows": 12,
+  "updates": 0,
+  "train_allowed": false,
+  "dataset_note": "official original TRAIN windows 0 and 1; previously used distribution, no fresh outer holdout"
+}
