@@ -1,0 +1,22 @@
+# CIDM-MHC-Real A11-FIX2 user result: Q0b low-band proxy failed; A11-R1 preregistered real-task qualification
+2026-10-16
+
+## Audited actual result
+- Uploaded `CIDM_MHC_REAL_A11_P0_MULTISCALE_OPERATOR_REPORTS(1).zip` SHA256 `c7859015f2d1c93ac391ab21c04fed5869cf74066989992ff87f720a8b11973e`; SHA sidecar matches, CRC PASS.
+- Real official FIX2 restored fifteen 2012–16 private HF MSLP/TAS/PR annual archives, recorded full SHA verifications. Original user ZIP does not contain raw netCDF, so no independent local source-byte rehash.
+- Q0 checks pass on Tesla T4: 13685 parameters; spectral reconstruction error 5.96e-8, grid-exchange flux sum max 2.98e-7, Cayley skew channel norm diff max 4.77e-7, 5-step VJP RMS .002274; synthetic-path module gradients nonzero.
+- Q0b train 2013/14 scalar lowpass persistence fitted from last-week spatial lowpass anomaly fails 2015 dev threshold: W3 MSLP +.031298%, TAS +.148536%, PR +.183025%; W4 MSLP -.009301%, TAS +.076297%, PR -.003005%. Original threshold >=.1% gain for at least one variable in BOTH W3/W4 not met. Original status `Q0_CAUSAL_LOW_BAND_SIGNAL_NOT_QUALIFIED_STOP_NO_TRAINING`, zero Q1 optimizer steps; no 2016+ target labels opened.
+
+## Scientific-method concern and preregistered contract amendment
+Original Q0b tests one scalar per variable/horizon multiplying only last-week lowpass anomaly. It is not a necessary or sufficient test of nonlinear 8-week Space/Time-History/Phase-Spectral plus antisymmetric Flux/Cayley Skew/spectral mixing. A11-R1 explicitly RETAINS failed scalar baseline as NEGATIVE DIAGNOSTIC; does not retroactively amend previous A11 verdict.
+New Q0c checks actual normalized W3/W4 training-field latitude-weighted loss on only **two 2013 training issues** whose W4 truth is still in 2013, seeds 17/41 and paired stateless/persistent with identical initial weights. Verify all seven main computational path gradients finite and >1e-10, memory counterfactual effect >1e-9, actual same-batch loss decreases after a single ephemeral AdamW step. Four ephemeral optimizer updates are discarded before Q1. This is an implementation/learnability check on TRAIN DATA ONLY, *not independent predictive signal evidence*. Fail-closed if Q0c fails.
+Only if Q0c passes, run original matched A11 Q1: 4 arms stateless_full,persistent_full,persistent_no_flux,persistent_no_spectral; both seeds 17/41; up to 40 updates per arm =320 Q1 updates; identical learning schedule, model shapes, train 2013–14 (101 cases), evaluate 2015 (49 already-reused developer issues), train progress/checkpoints every8. Retain original gate per seed/lead: persistent_full >=.2% better than stateless, >=.3% better than train-climate, PR no worse than stateless by 2%. Note no-flux/no-spectral ablations have different active compute. No 2016 or later target labels scored, no independent validation, no AIWQ RPSS, long training hard disallowed.
+
+## Deliverable and actual execution limits
+- Self-contained Colab `CIDM_MHC_REAL_A11_R1_TaskAligned_Multiscale_Colab_STANDALONE.ipynb` SHA256 `45226609f65764342c31b6e419260f64cc49b1cd9eb01e25eacb611e4ce468c0`.
+- Source `mhc_real_a11_r1_task_aligned.py` SHA256 `1e9992d156b34f974001e0ad13831bb5f2ffb3061d67a92f464f1eac610f3b6e`.
+- Full research ZIP SHA256 **`b76991bbff8328d29dce0f27d22a69decc3d5862641a60b518879b9e191f5372`**, CRC and exact inside-file manifest SHA PASS. Embedded A0/A8/A9/A10/A11-FIX2 exact immutable evidence and working source.
+- Whole Notebook 6/6 code cells executed in separate CPU smoke without official data. Separate **121×240** synthetic test executed actual W3/W4 task loss + one gradient descent step on two seeds × two arms, all four learning checks PASSED (deltas ~5e-5), counterfactual memory output effect measurable. Official Colab real-weather R1 **has NOT run**; no W3/W4 new skill claim.
+- HF_TOKEN from authorized Colab Secrets or environment, HF private dataset source, HF Model up to 2 atomic seed-checkpoint commits and 1 report commit enabled by default (if writer permission available); failure saves local zip/checkpoints, does not claim remote success. No Google Drive. Optional disable `MHC_A11_SYNC_HF_WEIGHTS=0`/`MHC_A11_SYNC_HF_REPORT=0` if repo throttle persists.
+
+Decision: previous Q0b baseline failure does not certify Flux/Skew/Spectral useless; A11-R1 may execute bounded CIDM mechanism pilot only after task-coupled Q0c, and any Q1 failure blocks scaling. Independent years, strong causal predictors and official competition RPSS must be evaluated later.
