@@ -1,0 +1,22 @@
+# CIDM-MHC-Real A11-R1: real Q0c PASS, Q1 mechanism qualification FAIL → frozen operator attribution R2
+
+2026-10-16
+
+## Exact actual user evidence
+User A11-R1 report SHA256 `f21011398d9f7596033d9ab4f488eb3b22ad1d42872ccbedb2cbffc0a8df7ec3`; supplied checksum matches, ZIP CRC passed, eight exact optimizer checkpoints' SHA256 matched user archived `HF_checkpoint_receipts`. Historical 2012–16 fifteen annual MSLP/TAS/PR file hashes verified by Colab; **this record does not re-download original raw NetCDF locally**. The source is a 13,685-registered-parameter *CIDM-inspired operator pilot*, not frozen production CIDM-v2.
+
+Four matched initialization arms and two seeds (17/41), each 40 optimizer updates, 320 pilot updates total; separate Q0c four discarded one-step probe updates. All six core physical/gradient checks passed, Q0c true W3/W4 *training-batch* loss decreases by about 0.00006–0.000074, but this proves only optimization implementation, not forecast skill. Historical 2013–14 101 training windows, previously reused 2015 49 development windows. Original Q0b low-pass scalar prior failed but retained as diagnostic only. No 2016 or later target labels scored, 2017 sealed, official RPSS not evaluated.
+
+**Persistent Full vs same-seed Stateless** mean relative standardized latitude-weighted 3-variable native-grid MSE gain: seed17 W3 **−0.000049864%**, W4 **−0.000073131%**; seed41 W3 **+0.000317232%**, W4 **+0.001146725%**. Against 2015 quarterly train-only climatology respectively +0.022699%, −0.030142%, −0.022911%, −0.053911%. Contract required +0.2% over Stateless and +0.3% over climatology for both seeds/leads: Q1 **FAIL**, long training forbidden. Seed weights and reports are preserved in user ZIP; 2 HF weight commits reported remote paths verified; one output ZIP commit reported submitted but exact remote SHA not checked locally.
+
+## Structural discovery
+In source, `dz=.07*tanh(local+.25*spectral+.15*flux+.25*cross)+.15*(rotate-z)`; output correction has additional `sigmoid(delta_logit)` (~0.118 post training) and 0.75 anomaly recurrence. This can significantly attenuate memory/flux action. Registered learnable `lat_scale` is not referenced by `forward` and receives no gradient; check observed in full 121x240 CPU model. Therefore nonzero flux and time encoder gradients are not evidence of meaningful useful output contribution. Original `per_issue_dev2015.csv` also omitted seed column; R2 re-emits it explicitly.
+
+## Next pre-registered A11-R2 (no new training)
+Notebook `CIDM_MHC_REAL_A11_R2_FrozenOperatorAttribution_Colab_STANDALONE.ipynb` SHA256 `1c8846425d490a7a6f2f545cfd462deffd5a5a016424a4ea7565835d51c7afa5`; source `a11_r2_frozen_intervention.py` SHA256 `50713f0b2e6dadb6f8e48aa07d0a8e0ca403e548d44833b029c89fa8dec0e511`. Self-contained with original 1.4 MB user ZIP, all eight trained checkpoints and five exact previous scientific anchors. Colab official CUDA uses authorized HF_TOKEN to download only pinned original private annual files; **does not train**. Offline no-HF mode verifies SHA and original metric Gate.
+
+Frozen `persistent_full` checkpoint for each seed is evaluated on same 2015 49 issues with six modes: original full, no_persistent_memory (same weights, replace recurrence only), no_flux, no_spectral_transition (phase encoder preserved), no_skew (identity Cayley), no_cross_coupling. Reports per-issue seed, lead, variable and intervention output absolute amplitude / ratio to original climate anomaly, W3/W4 MSE and whether original full model actually benefits from each component. Fail-closed if original frozen 2015 scores cannot be replayed within 5e-6. **These are same-weights removal interventions, not fully trained equal-capacity architecture comparisons; 2015 is dev not independent.** No 2016+ label access, no 2017 unseal, no AIWQ RPSS, no authorization of long training.
+
+Notebook **5/5 executable cells isolated CPU offline smoke PASS** and extra original 121x240 dual-seed trained-checkpoint synthetic tensor test: all 6 interventions return finite outputs and verified unused `lat_scale.grad is None`. These are software tests, *not official real-data R2 science*. Complete research ZIP SHA256 `659ea682bfafec2c94b2b6a1982ec8b26d44e9a2e26bfdb24d3bb6bc7cc22b2f`, CRC/manifest checked. No Google Drive, no HF report upload by default; local report ZIP+SHA and logs for user.
+
+Scientific decision: avoid repeated 40-step tiny pilot without mechanism effect; require meaningful operator action plus target-aligned value or expand causal observables Z500/SST/S2S.
