@@ -1,177 +1,195 @@
 {
-  "status": "FROZEN_CONDITIONAL_INFORMATION_COMPLETED_NO_TRAINING",
-  "source_sha256": "4d6edafa009d09813de15241b8c485b193578bd9782117855f69547f96bf5063",
-  "model_checkpoint_sha256": "e55f47fb3ecd1f1518e0ec629d1f24311b2e05f6a8fd07fe04ac7de1948528d6",
-  "parent_replay_12_dates": {
-    "W3_MSE": 0.11103636150558789,
-    "W4_MSE": 0.10791248766084512,
-    "ctrl_max_rms": 0.005226058148158093
-  },
-  "training_years": [
-    2013,
-    2014,
-    2015
-  ],
-  "validation_years": [
-    2016
-  ],
-  "sealed_2017_untouched": true,
-  "records": {
-    "fit": 101,
-    "tune": 49,
-    "validation": 48
-  },
-  "raw_sha_verified": [
+  "status": "FROZEN_PHYSICAL_STATE_INFORMATION_COMPLETED_NO_TRAINING",
+  "fix1_patch": "module.__file__ provenance SHA plus early no-download serialization precheck",
+  "origin_a2_report_sha256": "29f0c7c524d6af3cb2b8f22fc17b97fd924ce174f51948788465658dc23513a4",
+  "origin_a2_source_sha256": "4d6edafa009d09813de15241b8c485b193578bd9782117855f69547f96bf5063",
+  "origin_a3_blocked_report_sha256": "98cf5e6912f1fabd72bc0a2072bf9192e9674875f3e44fae14858e5255260a05",
+  "source_sha256": "b4b13d3ea1d95f18e745c9152c9766db8132184140df93759569fb77c2de4d60",
+  "checkpoint_sha256": "e55f47fb3ecd1f1518e0ec629d1f24311b2e05f6a8fd07fe04ac7de1948528d6",
+  "data_file_hashes": [
     {
       "year": 2012,
       "var": "mslp",
       "sha256": "de1f4666237c6288b4c25b104ce47d728c2efa43bc3188a09a0c36e92c0b1002",
-      "source": "local"
+      "source": "hf_private"
     },
     {
       "year": 2012,
       "var": "tas",
       "sha256": "b4b29dcc6961623c9c907165c202176971d3e8af6a9f5ae1a8c554ba8981c805",
-      "source": "local"
+      "source": "hf_private"
     },
     {
       "year": 2013,
       "var": "mslp",
       "sha256": "f1a3df1b1feb8bd2ea3fe353e55b9d861faef0cf92ac66088b8f40461f165921",
-      "source": "local"
+      "source": "hf_private"
     },
     {
       "year": 2013,
       "var": "tas",
       "sha256": "26a26d0124c2731a18f68e8ca9ade98b5c76feca0a80f8353bd6965e6f96a588",
-      "source": "local"
+      "source": "hf_private"
     },
     {
       "year": 2014,
       "var": "mslp",
       "sha256": "05237007b830a3233381a787ecb535ed154646798fd2e6f222141d1b3105c7ec",
-      "source": "local"
+      "source": "hf_private"
     },
     {
       "year": 2014,
       "var": "tas",
       "sha256": "b76ced66d3dab0adddfd03fbcca14dd05028a2850c941648e5ba3792d197af4b",
-      "source": "local"
+      "source": "hf_private"
     },
     {
       "year": 2015,
       "var": "mslp",
       "sha256": "516bb1b005b8bf6e62b70573cede5bc6a5b37fc6d6a7d7fcd1d6210b07c032ca",
-      "source": "local"
+      "source": "hf_private"
     },
     {
       "year": 2015,
       "var": "tas",
       "sha256": "fdb9ad16e4bbac1539bfb25af947b5349cbb961f155774490f5e7e8ed81a4a62",
-      "source": "local"
+      "source": "hf_private"
     },
     {
       "year": 2016,
       "var": "mslp",
       "sha256": "d6350472d6fdf2e46623756c9fa3703f41fb0b277342a2b4233c3327c719cdf4",
-      "source": "local"
+      "source": "hf_private"
     },
     {
       "year": 2016,
       "var": "tas",
       "sha256": "8b99a44e92927a5d7c0fed00761f14109a155919f7174c0cfc04f0aff3758130",
-      "source": "local"
+      "source": "hf_private"
     },
     {
       "year": 2017,
       "var": "mslp",
       "sha256": "71f0281f6d35f4ba30cbfb8c7dd742b4bd66e897b8fa7d40a0c1843df0242842",
-      "source": "local"
+      "source": "hf_private"
     },
     {
       "year": 2017,
       "var": "tas",
       "sha256": "fe72133596493e5b9d089ec4612245854c903ad9c621c5ef22a21db173948878",
-      "source": "local"
+      "source": "hf_private"
     }
   ],
-  "score_type": "coarse_zonal_mean_residual_MSE_NOT_AIWQ_RPSS",
-  "gate": {
-    "strong_conditional_information_signal": false,
-    "eligibility_for_formal_training": false,
-    "message": "A positive diagnostic is NOT a physical Markov state proof or permission for large training."
+  "original_12_issue_replay": {
+    "W3_MSE": 0.11103636150558789,
+    "W4_MSE": 0.10791248766084512,
+    "ctrl_max_rms": 0.005226058148158093
   },
+  "old_A2_three_variant_score_replay": "PASS",
+  "split_sizes": {
+    "fit": 101,
+    "tune": 49,
+    "validation": 48
+  },
+  "sealed_2017_untouched": true,
+  "permutation_replicates_per_type": 16,
+  "score_type": "coarse_zonal_mean_residual_MSE_NOT_AIWQ_RPSS",
   "metrics": {
     "W3": {
-      "coarse_unadjusted_mse": 0.008400625875029585,
-      "instant": {
-        "mse": 0.002407063033221274,
-        "train_only_lambda": 10.0,
-        "diagnostic": {
-          "features": 56,
-          "train_samples": 150,
-          "lambda_tune_MSE": 0.002769105581913502
+      "mean_mse": {
+        "instant": 0.002407063033221274,
+        "memory": 0.0023797314385967192,
+        "physical": 0.002168703640537171
+      },
+      "memory_vs_instant_pct": 1.1354748192023012,
+      "physical_vs_instant_pct": 9.902498995429967,
+      "physical_vs_memory_pct": 8.86771484533511,
+      "physical_better_windows_vs_instant": 27,
+      "physical_better_windows_vs_memory": 26,
+      "physical_vs_instant_4week_bootstrap_CI_pct": [
+        -2.381794953045674,
+        10.01691996462528,
+        19.812995190416483
+      ],
+      "physical_vs_memory_4week_bootstrap_CI_pct": [
+        -2.132790037929494,
+        8.940003657215367,
+        17.918313394477277
+      ],
+      "sham_MSE_5pct_threshold": {
+        "global": 0.002216854528028511,
+        "seasonal": 0.002280921240161287
+      },
+      "n_2016_issues": 48,
+      "ridge_settings": {
+        "instant": {
+          "chosen_lambda": 10.0,
+          "tune_mse": 0.002769105581913502,
+          "features": 56
+        },
+        "memory": {
+          "chosen_lambda": 10.0,
+          "tune_mse": 0.002737432205417786,
+          "features": 104
+        },
+        "physical": {
+          "chosen_lambda": 100.0,
+          "tune_mse": 0.0027663259486760275,
+          "features": 104
         }
       },
-      "memory": {
-        "mse": 0.0023797314385967192,
-        "train_only_lambda": 10.0,
-        "diagnostic": {
-          "features": 104,
-          "train_samples": 150,
-          "lambda_tune_MSE": 0.002737432205417786
-        }
-      },
-      "sham": {
-        "mse": 0.002372927470083214,
-        "train_only_lambda": 10.0,
-        "diagnostic": {
-          "features": 104,
-          "train_samples": 150,
-          "lambda_tune_MSE": 0.0028363445624945507
-        }
-      },
-      "memory_over_instant_pct": 1.1354748192023012,
-      "memory_over_sham_pct": -0.2867331007494542,
-      "memory_better_windows_vs_instant": 23,
-      "memory_better_windows_vs_sham": 29,
-      "count": 48
+      "physical_signal_gate": false
     },
     "W4": {
-      "coarse_unadjusted_mse": 0.011514325457234607,
-      "instant": {
-        "mse": 0.002331048521826151,
-        "train_only_lambda": 10.0,
-        "diagnostic": {
-          "features": 56,
-          "train_samples": 150,
-          "lambda_tune_MSE": 0.0028463762206286784
+      "mean_mse": {
+        "instant": 0.002331048521826151,
+        "memory": 0.002306800992316113,
+        "physical": 0.0021729604188103504
+      },
+      "memory_vs_instant_pct": 1.0401984035511396,
+      "physical_vs_instant_pct": 6.781845231259014,
+      "physical_vs_memory_pct": 5.801999130032524,
+      "physical_better_windows_vs_instant": 25,
+      "physical_better_windows_vs_memory": 26,
+      "physical_vs_instant_4week_bootstrap_CI_pct": [
+        -13.216594521769503,
+        6.699171364137522,
+        23.79329583654782
+      ],
+      "physical_vs_memory_4week_bootstrap_CI_pct": [
+        -13.671726837505892,
+        5.83178701652086,
+        22.625361634578457
+      ],
+      "sham_MSE_5pct_threshold": {
+        "global": 0.002340299471575353,
+        "seasonal": 0.0021956383291931894
+      },
+      "n_2016_issues": 48,
+      "ridge_settings": {
+        "instant": {
+          "chosen_lambda": 10.0,
+          "tune_mse": 0.0028463762206286784,
+          "features": 56
+        },
+        "memory": {
+          "chosen_lambda": 10.0,
+          "tune_mse": 0.0028277701999934526,
+          "features": 104
+        },
+        "physical": {
+          "chosen_lambda": 100.0,
+          "tune_mse": 0.002862772312393554,
+          "features": 104
         }
       },
-      "memory": {
-        "mse": 0.002306800992316113,
-        "train_only_lambda": 10.0,
-        "diagnostic": {
-          "features": 104,
-          "train_samples": 150,
-          "lambda_tune_MSE": 0.0028277701999934526
-        }
-      },
-      "sham": {
-        "mse": 0.002436256300346091,
-        "train_only_lambda": 10.0,
-        "diagnostic": {
-          "features": 104,
-          "train_samples": 150,
-          "lambda_tune_MSE": 0.0029829579602840355
-        }
-      },
-      "memory_over_instant_pct": 1.0401984035511396,
-      "memory_over_sham_pct": 5.313698234934794,
-      "memory_better_windows_vs_instant": 26,
-      "memory_better_windows_vs_sham": 25,
-      "count": 48
+      "physical_signal_gate": false
     }
   },
-  "parameter_updates_on_mhc": 0
+  "gate": {
+    "physical_state_information_prequalified_diagnostic_only": false,
+    "full_mhc_training_authorized": false,
+    "note": "2016 reused validation, only exploratory mechanism qualification"
+  },
+  "weather_model_optimizer_updates": 0
 }
