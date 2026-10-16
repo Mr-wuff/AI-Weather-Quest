@@ -1,0 +1,27 @@
+# CIDM-MHC-Real A9 official 3-var native-grid FAIL → A10 climate-anchored anomaly pilot
+Date: 2026-10-16.
+
+## Exact verified original A9 run
+- User A9 result ZIP SHA256 **`051920eac124bf657d8bb66a6b8b8f814dc9831f309545e3d3d78a063ade0fb5`**, upload sidecar exact match, CRC PASS. Executed A9 notebook ran in official GPU mode, original data 15 annual MSLP/TAS/PR files (2012–16) from **private** HF Dataset with individual SHA logs, 121×240 native grid. Raw `.nc` bytes are **NOT** in conversation upload, so cannot claim local raw-byte rehash.
+- A9 real status `OFFICIAL_3VAR_NATIVE_GRID_SMALL_PILOT_COMPLETED_NOT_LONG_TRAINING`; seeds 17/41, three exactly parameter-matched arms each 4899 params and **24 actual optimizer updates** (144 combined), train 153 historical Thursday issues 2013–15, reused 2016 dev 48 issues. No 2017+ scoring. Original A9 source SHA256 `5165722a5ca319ef5e79fc520acb33c264d3ce079eed7498fcbd2f47e44da3d2`.
+
+## Independently recomputed user CSV — native latitude-weighted standardized 3-var MSE
+| Method, avg across seed17 and seed41 | W3 | W4 |
+|---|---:|---:|
+| **train-only quarter climatology** | **0.2290992701** | **0.2287950162** |
+| stateless | 0.3521266520 | 0.3629590628 |
+| legacy_mhc | 0.3521750995 | 0.3632826241 |
+| physical_init_mhc | 0.3581160380 | 0.3676687054 |
+Stateless **53.70% worse W3 / 58.64% worse W4** than climate; native forecast learning/anchor is the first-order bottleneck. Averaged per-variable PR MSE for Stateless **0.7208006 W3 / 0.7426065 W4**, far above same-normalization PR climate **0.4775791 / 0.4779403**. No recurrent candidate beat quarter climatology PR or passed original 0.1% dual-seed dual-lead Gate.
+Relative to same-seed Stateless in W3/W4 respectively: legacy seed17 +0.028704% / −0.080717%, seed41 −0.055689% / −0.097511%; physical-init seed17 −0.957137% / −0.495695%, seed41 −2.435381% / −2.093473%. These are NOT official AI Weather Quest quintile RPSS. A9 model is MHC-inspired minimalist prototype, not original mature CIDM-v2.
+
+## A10/P0 preregistration (not yet run on full real meteorology)
+Introduce train-only 2012–15 **per-quarter per-gridpoint climatology** `C_q(x)` as known-at-issue anchor; forecast `y_hat_k=C_{q(k)}+a_k`, with self-evolving anomaly `a_{k+1}=0.72 a_k+0.12 tanh(H_theta(a_k,m_k,h,delta C))`, `a_0=0`. At zero head weight/bias, output EXACTLY training climatology at W3 and W4 (all arms). All future climatological maps use known calendar only, not future ERA5 observed fields. Source history is only eight completed seven-day windows before Thu forecast issue. Identical learnable parameter shapes and initialization for stateless / persistent legacy / physical-history-initialized memory.
+**Q0 hard checks**: A0/A8/A9 evidence hashes+CRC (A0=`c4c45e8c0e48ee5f29b78006710f4ab17de537ac0c76ef3e8bb9b332b6a37fe3`; A8=`bfc4acff758a5cb0b56749fb6d7120884d8255db32e06d9314e683d65aa4d1d8`); original immutable A9 source SHA; 15 original annual netCDF hashes from private HF; exact-grid W3/W4 train-only climatology score replay to tolerance 1e-6; exact zero-correction climate identity; gradient and counterfactual memory nondegeneracy; train/test causality, and matching initialization/schedule.
+**Q1 small budget**: 2 seeds×3 arms×32 updates, 2 samples/update, stage prints and optimizer-checkpoints every 8 updates, same evaluation date set 2016 (48 issues), only last-step compared. Eligibility per MHC arm: ≥0.2% improvement vs Stateless AND ≥0.2% improvement vs same-scale global climate all-3 MSE AND PR MSE < PR climate separately for BOTH seeds and BOTH W3/W4. `LONG_TRAINING_AUTHORIZED=false` hard-coded even on exploratory positive result. Independent outer years + proper probabilistic quintile RPSS + operational input legality missing.
+Artifacts: `CIDM_MHC_REAL_A10_P0_ClimateAnchored_Colab_STANDALONE.ipynb` SHA256 `5bc9e899c1b14f1e199669946a71b3ab264c6f348c5004569927fbf7efbc6ddb`, `mhc_real_a10_climate_anchored.py` SHA256 `6684efe8ef8e7761cb2035549e3e0b117e4cf0ecd057c77023b3b793b44f5463`; complete research delivery ZIP **`2a34fa5081e1f0dccfa2f6c8ba852fb858dcbac8f74a7995d659bd96f44ccede`**.
+Verification: full standalone Notebook **4/4 code cells** executed nbclient isolated CPU smoke with embedded authentic A0/A8/A9 SHA locks, output ZIP/CRC/SHA. Separate full **121×240** synthetic weather bank ran 1 full backward update per arm and exact anchor plus W3/W4 evaluation; all PASS. **Official A10 real weather/GPU experiment not run yet.**
+
+Storage: no Google Drive. Read verified 15 year-variable original files from private HF Dataset; per-seed one atomic HF Model commit of three optimizer-complete checkpoints (at most two); immutable result ZIP+SHA one HF commit. Local checkpoints every 8 updates; sync receipts checked; fallback archive includes local checkpoint files if HF upload fails. No promise of cross-session automatic resume.
+
+Scientific interpretation: A9 failure is a reliable negative finding for that 24-step implementation, NOT a proof general MHC architecture false. A10 must first beat a strong climatology in the native-grid scoring space; only then is memory-state attribution worth interpreting. Full CIDM and proper S2S probabilistic AI Weather Quest RPSS remain future stages.
