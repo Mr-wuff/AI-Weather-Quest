@@ -1,0 +1,70 @@
+{
+  "experiment": "CIDM_MHC_REAL_A1",
+  "status": "MHC_REAL_A1_EARLY_GATE_FAIL_FROZEN_AUDIT_COMPLETED_NO_TRAINING",
+  "official_aiwq_rpss": null,
+  "is_official_submission": false,
+  "dataset_kind": "ERA5_historical_reanalysis_hindcast_only",
+  "operational_predictor_ready": false,
+  "train_seeds": [
+    17,
+    41
+  ],
+  "conditions": [
+    "stateless",
+    "mhc",
+    "mhc_noaux"
+  ],
+  "fixed_steps": 64,
+  "test_2017_untouched_until_sealed": true,
+  "source_sha256": "9574866fc485c0868e3ac7b00c6d64db959f6353eaa3a569c60fd2b8ade84d9e",
+  "target_year_embargo_counts": {
+    "train": 153,
+    "validation": 48,
+    "audit_not_fresh_official": 48
+  },
+  "original_a0_counts": {
+    "train": 157,
+    "validation": 52,
+    "audit_not_fresh_official": 48
+  },
+  "reason": "seed17 already fails preregistered >=0.5% both W3/W4 MHC-v-Stateless; seed41 training cannot restore conjunctive Gate",
+  "seed17_mhc_vs_stateless_pct": {
+    "W3_MSE": 4.864774234075546e-05,
+    "W4_MSE": 0.00010816694060705827
+  },
+  "seed17_completed_remote_verified": {
+    "stateless": {
+      "step": 64,
+      "sha256": "e2a449c3025fe0223022be26a6a9c1ee8e6a60e46f146208f6a7a532f9dba37e",
+      "hf_path": "experiments/MHC_REAL_A1/pilot_seed17_stateless_step0064.pt"
+    },
+    "mhc": {
+      "step": 64,
+      "sha256": "e55f47fb3ecd1f1518e0ec629d1f24311b2e05f6a8fd07fe04ac7de1948528d6",
+      "hf_path": "experiments/MHC_REAL_A1/pilot_seed17_mhc_step0064.pt"
+    },
+    "mhc_noaux": {
+      "step": 64,
+      "sha256": "0031e8e356e41310dbde85f7db8ac475b27328a20b661e971d6b548fedc95b91",
+      "hf_path": "experiments/MHC_REAL_A1/pilot_seed17_mhc_noaux_step0064.pt"
+    }
+  },
+  "seed41_future_training_skipped": true,
+  "all_2016_frozen_memory_reset_equal_action_rms": {
+    "W3": {
+      "full_mse": 0.11416160439451535,
+      "reset_equal_rms_mse": 0.11416170792654157,
+      "reset_worsening_pct": 9.06890077142439e-05,
+      "full_better_windows": 38,
+      "issues": 48
+    },
+    "W4": {
+      "full_mse": 0.11694903035337727,
+      "reset_equal_rms_mse": 0.11694922220582764,
+      "reset_worsening_pct": 0.00016404791881649683,
+      "full_better_windows": 39,
+      "issues": 48
+    }
+  },
+  "independent_2017_audit_opened": false
+}
