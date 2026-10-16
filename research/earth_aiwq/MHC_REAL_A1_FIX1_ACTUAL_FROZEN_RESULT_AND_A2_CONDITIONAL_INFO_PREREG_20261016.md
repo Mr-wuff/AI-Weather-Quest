@@ -1,0 +1,21 @@
+# MHC-Real A1-FIX1 actual freeze-audit result and A2 conditional-information qualification
+Date: 2026-10-16
+
+## Uploaded and independently audited A1-FIX1 result
+- User ZIP `CIDM_MHC_REAL_A1_PAIRED_PILOT_REPORTS(1).zip`: SHA256 `5e8001317ea90df6d9b38cb6bbf88d6cf1933b5db9fdc4e71d558a3e4ffddf5c`; uploaded SHA256 sidecar matches; ZIP CRC PASS.
+- Official status `MHC_REAL_A1_EARLY_GATE_FAIL_FROZEN_AUDIT_COMPLETED_NO_TRAINING`. No new optimizer updates; existing seed17 three step64 HF model checkpoints each SHA verified according to Colab report; 2016 fixed validation 48 issues scored, 2017 held out. No ECMWF official RPSS.
+- Seed17 MHC vs Stateless W3 MSE gain **0.000048647742%**, W4 **0.000108166941%**, much smaller than preregistered **0.5% on BOTH seeds and BOTH windows**, so continuing seed41 cannot rescue original conjunctive Gate.
+- 2016 48-issue frozen full slow memory vs per-step reset with equal actual action RMS: W3 Full `0.11416160439451535`, Reset `0.11416170792654157`, loss increase on deletion only `0.0000906890%` (38/48 prefer Full); W4 Full `0.11694903035337727`, Reset `0.11694922220582764`, increase `0.000164048%` (39/48). Exposure mismatch max `1.3868e-7`. These values are 2016 continuous standardized field MSE, NOT RPSS.
+- Original 12 ECMWF annual NetCDF files were restored by the official runtime from the **private HF Dataset**, per-file SHA pinned. Raw full bytes were not in the user report archive.
+- New A1-FIX1 report upload to HF **FAILED_RETRY_LATER HTTP 429** even though source/report GitHub sync SUCCESS. Remote report persistence must not be assumed.
+
+## A2/P0 preregistered no-weather-model-training probe
+Delivered standalone Notebook `CIDM_MHC_REAL_A2_P0_ConditionalInformation_Colab_STANDALONE.ipynb`, source `mhc_real_a2_conditional_information.py` SHA256 `4d6edafa009d09813de15241b8c485b193578bd9782117855f69547f96bf5063`, ZIP SHA256 `8fb56ce1c36d8d9360afd7abbe0fe0979ecfb1202a28ea0503a9b7309127f212`. Original A0/A1/A1-FIX1 evidence and legacy source SHA-embedded in Notebook.
+- Freeze seed17 real MHC 64step checkpoint exact SHA `e55f47fb3ecd1f1518e0ec629d1f24311b2e05f6a8fd07fe04ac7de1948528d6`; no new weather network updates. Extract from its actual first prediction-head input per step the coupled latent state `zbase=slow+fast` and memory innovation `slow - lowpass(zbase)`, plus latest physical forecast.
+- Each W3/W4 feature is lat-banded area-weighted coarse pooling of full current latent and current field; compare fixed ridge regressors Instant vs Instant+aligned memory innovation vs Instant+shuffled innovation of **same feature dimension** (shuffled sham is a diagnostic non-deployable negative control). Targets are real historical W3/W4 future residual **coarse zonal-mean only**, not native-grid RPSS. Future truth is label for supervised ridge training, NEVER a recurrent input.
+- Additional target-year embargo for internal probe split: **2013–14 fit 101 legitimate issues**, **2015 tune 49 issues**, **2016 validation 48 issues**; 2017 sealed. Ridge lambda fixed `[0.1, 1, 10, 100]`, 2015 only selects coefficient, then 2013–15 fit.
+- Diagnostic Gate strong conditional information only if Memory surpasses BOTH instant-only and sham by `>=0.1%` coarse W3 **and** W4 MSE, and wins `>=32/48` issues against each. This does NOT authorize full training, nor prove Markov sufficiency, nor demonstrate leaderboard skill. Prior 2016 validation used by model selection, so this is NOT independent holdout.
+- No Google Drive. Use private HF Dataset to read 12 raw files and HF Model to load frozen original, one atomic optional result commit to HF Model (do not retry repeatedly if 429), optional source/light report GitHub sync, local downloadable ZIP+SHA on failures.
+- Full notebook all executable code cells executed locally in CPU smoke with authentic embedded pinned evidence and actual original architecture; synthetic tiny spatial input for math + ridge solver/ZIP/CRC pass. Official full-data A2 has NOT been executed.
+
+Decision: current memory module affects predictions but standalone gain is orders of magnitude below the predefined qualification Gate. Test whether it preserves any conditional useful information before architecting a new slow-state dynamics. Original A1 full training remains closed.
