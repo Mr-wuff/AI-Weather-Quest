@@ -1,0 +1,20 @@
+# CIDM-MHC-Real A2 official evidence and A3 physical-history sufficiency preregistration
+2026-10-16
+
+## Exact uploaded evidence
+- User A2 official report ZIP SHA256: `29f0c7c524d6af3cb2b8f22fc17b97fd924ce174f51948788465658dc23513a4`; provided sidecar matches, ZIP CRC passes.
+- Final original status `FROZEN_CONDITIONAL_INFORMATION_COMPLETED_NO_TRAINING`; 2013–14 101 fitting issues, 2015 49 tuning, 2016 48 reused validation, 2017 sealed. Exact seed17 MHC step64 checkpoint SHA pinned, no weather model update. Runtime report declares HF/GH archival SUCCESS.
+- Coarse zonal-mean residual MSE, not AIWQ RPSS: W3 Instant 0.00240706303322, Memory 0.00237973143860, single Sham 0.00237292747008. W4 Instant 0.00233104852183, Memory 0.00230680099232, Sham 0.00243625630035.
+- Memory vs Instant aggregate MSE gains +1.13547% W3, +1.04020% W4; vs sham -0.28673% W3 and +5.31370% W4. Memory wins only 23/48, 26/48 issues over Instant and 29/48, 25/48 vs sham. Original 32/48 preregistered per-window requirement failed. A2 conditional-information Gate FALSE.
+- Reanalysis of original per_issue.csv using 4-week circular moving block resampling 2500 trials gives approximate descriptive 95% mean-gain windows: Memory vs Instant W3 [-0.848%, +2.890%], W4 [-1.231%, +2.599%]; Memory vs single Sham W3 [-8.964%, +7.760%], W4 [-4.420%, +13.943%]. These are NOT formal independent confidence intervals since 2016 VAL was reused; seasonality nonstationarity and only 48 issues.
+
+## Scientific decision
+Stop additional formal training of current simplistic lowpass persistent Markov memory. This negative qualification does NOT refute Markov state sufficiency as an architectural principle; consider physically grounded causal histories before implementing richer slow-state evolution.
+
+## New standalone A3/P0, NOT yet officially executed
+- New notebook `CIDM_MHC_REAL_A3_P0_PhysicalHistoryState_Colab_STANDALONE.ipynb`; driver `mhc_real_a3_physical_state_probe.py` SHA256 `b4dd6656b5a023d7c5f83c3e58f2c30b207acbdbce302890bc0d18105db53c42`.
+- Frozen exact seed17 step64 real weather model (no weather training). Compare common latent/forecast phase (56D) + no increment vs original MHC memory (48D) vs causally derived historical MSLP/TAS slow state (48D: last week, last4 mean, 8-week mean, newest weekly change, recent vs early 4-week trend, 8-week volatility, recent4 volatility, last-week spatial high-frequency magnitude, each in 3 latitude belts x2 variables). This is a physical-structure proxy, NOT a sufficient physics state or deployed AIWQ submission.
+- 16 global and 16 quarter-preserving shams for EACH of the 2 feature sources × W3/W4; 128 sham-run summary rows. Fit 2013–14, tune ridge 2015, evaluate reused 2016 48 issues; 2017 sealed. Exact SHA-locked user A2 evidence, original 12 issue seed17 rollout and A2 three-variant MSE hard replay before any new scoring.
+- Predeclared exploratory Gate requires physical state improve over Instant >=0.5%, over old memory >=0.2%, >=32/48 per-date wins vs both, exceed 95th percentile sham skill from global and quarter-preserving controls, positive 4week-block CI lower bound, BOTH W3 and W4. Even passing does NOT authorize full CIDM model training, as reused 2016 validation is not new external holdout.
+- Full notebook 5 executable cells passed independent CPU smoke with original historical embedded evidence pin verification, synthetic spatial input, ridge & sham loops, user-visible ZIP/CRC/SHA; 2012–17 real archive and private seed17 checkpoint have NOT been accessed in this chat. Colab Official mode restores from private HF Dataset/Model; user runtime Secrets `HF_TOKEN` and possibly `AIWQ_PASSWORD`; no Google Drive. Immutable output archive and separate HF upload receipt to avoid published/local hash mismatch.
+- Delivery ZIP SHA256 `4851b7e923e8fb60c191b7e4cf0a67ae1ae38a62f99e049beecfe2d8fbabc938`.
