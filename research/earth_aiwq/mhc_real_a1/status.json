@@ -1,70 +1,177 @@
 {
-  "experiment": "CIDM_MHC_REAL_A1",
-  "status": "MHC_REAL_A1_EARLY_GATE_FAIL_FROZEN_AUDIT_COMPLETED_NO_TRAINING",
-  "official_aiwq_rpss": null,
-  "is_official_submission": false,
-  "dataset_kind": "ERA5_historical_reanalysis_hindcast_only",
-  "operational_predictor_ready": false,
-  "train_seeds": [
-    17,
-    41
+  "status": "FROZEN_CONDITIONAL_INFORMATION_COMPLETED_NO_TRAINING",
+  "source_sha256": "4d6edafa009d09813de15241b8c485b193578bd9782117855f69547f96bf5063",
+  "model_checkpoint_sha256": "e55f47fb3ecd1f1518e0ec629d1f24311b2e05f6a8fd07fe04ac7de1948528d6",
+  "parent_replay_12_dates": {
+    "W3_MSE": 0.11103636150558789,
+    "W4_MSE": 0.10791248766084512,
+    "ctrl_max_rms": 0.005226058148158093
+  },
+  "training_years": [
+    2013,
+    2014,
+    2015
   ],
-  "conditions": [
-    "stateless",
-    "mhc",
-    "mhc_noaux"
+  "validation_years": [
+    2016
   ],
-  "fixed_steps": 64,
-  "test_2017_untouched_until_sealed": true,
-  "source_sha256": "9574866fc485c0868e3ac7b00c6d64db959f6353eaa3a569c60fd2b8ade84d9e",
-  "target_year_embargo_counts": {
-    "train": 153,
-    "validation": 48,
-    "audit_not_fresh_official": 48
+  "sealed_2017_untouched": true,
+  "records": {
+    "fit": 101,
+    "tune": 49,
+    "validation": 48
   },
-  "original_a0_counts": {
-    "train": 157,
-    "validation": 52,
-    "audit_not_fresh_official": 48
-  },
-  "reason": "seed17 already fails preregistered >=0.5% both W3/W4 MHC-v-Stateless; seed41 training cannot restore conjunctive Gate",
-  "seed17_mhc_vs_stateless_pct": {
-    "W3_MSE": 4.864774234075546e-05,
-    "W4_MSE": 0.00010816694060705827
-  },
-  "seed17_completed_remote_verified": {
-    "stateless": {
-      "step": 64,
-      "sha256": "e2a449c3025fe0223022be26a6a9c1ee8e6a60e46f146208f6a7a532f9dba37e",
-      "hf_path": "experiments/MHC_REAL_A1/pilot_seed17_stateless_step0064.pt"
+  "raw_sha_verified": [
+    {
+      "year": 2012,
+      "var": "mslp",
+      "sha256": "de1f4666237c6288b4c25b104ce47d728c2efa43bc3188a09a0c36e92c0b1002",
+      "source": "local"
     },
-    "mhc": {
-      "step": 64,
-      "sha256": "e55f47fb3ecd1f1518e0ec629d1f24311b2e05f6a8fd07fe04ac7de1948528d6",
-      "hf_path": "experiments/MHC_REAL_A1/pilot_seed17_mhc_step0064.pt"
+    {
+      "year": 2012,
+      "var": "tas",
+      "sha256": "b4b29dcc6961623c9c907165c202176971d3e8af6a9f5ae1a8c554ba8981c805",
+      "source": "local"
     },
-    "mhc_noaux": {
-      "step": 64,
-      "sha256": "0031e8e356e41310dbde85f7db8ac475b27328a20b661e971d6b548fedc95b91",
-      "hf_path": "experiments/MHC_REAL_A1/pilot_seed17_mhc_noaux_step0064.pt"
+    {
+      "year": 2013,
+      "var": "mslp",
+      "sha256": "f1a3df1b1feb8bd2ea3fe353e55b9d861faef0cf92ac66088b8f40461f165921",
+      "source": "local"
+    },
+    {
+      "year": 2013,
+      "var": "tas",
+      "sha256": "26a26d0124c2731a18f68e8ca9ade98b5c76feca0a80f8353bd6965e6f96a588",
+      "source": "local"
+    },
+    {
+      "year": 2014,
+      "var": "mslp",
+      "sha256": "05237007b830a3233381a787ecb535ed154646798fd2e6f222141d1b3105c7ec",
+      "source": "local"
+    },
+    {
+      "year": 2014,
+      "var": "tas",
+      "sha256": "b76ced66d3dab0adddfd03fbcca14dd05028a2850c941648e5ba3792d197af4b",
+      "source": "local"
+    },
+    {
+      "year": 2015,
+      "var": "mslp",
+      "sha256": "516bb1b005b8bf6e62b70573cede5bc6a5b37fc6d6a7d7fcd1d6210b07c032ca",
+      "source": "local"
+    },
+    {
+      "year": 2015,
+      "var": "tas",
+      "sha256": "fdb9ad16e4bbac1539bfb25af947b5349cbb961f155774490f5e7e8ed81a4a62",
+      "source": "local"
+    },
+    {
+      "year": 2016,
+      "var": "mslp",
+      "sha256": "d6350472d6fdf2e46623756c9fa3703f41fb0b277342a2b4233c3327c719cdf4",
+      "source": "local"
+    },
+    {
+      "year": 2016,
+      "var": "tas",
+      "sha256": "8b99a44e92927a5d7c0fed00761f14109a155919f7174c0cfc04f0aff3758130",
+      "source": "local"
+    },
+    {
+      "year": 2017,
+      "var": "mslp",
+      "sha256": "71f0281f6d35f4ba30cbfb8c7dd742b4bd66e897b8fa7d40a0c1843df0242842",
+      "source": "local"
+    },
+    {
+      "year": 2017,
+      "var": "tas",
+      "sha256": "fe72133596493e5b9d089ec4612245854c903ad9c621c5ef22a21db173948878",
+      "source": "local"
     }
+  ],
+  "score_type": "coarse_zonal_mean_residual_MSE_NOT_AIWQ_RPSS",
+  "gate": {
+    "strong_conditional_information_signal": false,
+    "eligibility_for_formal_training": false,
+    "message": "A positive diagnostic is NOT a physical Markov state proof or permission for large training."
   },
-  "seed41_future_training_skipped": true,
-  "all_2016_frozen_memory_reset_equal_action_rms": {
+  "metrics": {
     "W3": {
-      "full_mse": 0.11416160439451535,
-      "reset_equal_rms_mse": 0.11416170792654157,
-      "reset_worsening_pct": 9.06890077142439e-05,
-      "full_better_windows": 38,
-      "issues": 48
+      "coarse_unadjusted_mse": 0.008400625875029585,
+      "instant": {
+        "mse": 0.002407063033221274,
+        "train_only_lambda": 10.0,
+        "diagnostic": {
+          "features": 56,
+          "train_samples": 150,
+          "lambda_tune_MSE": 0.002769105581913502
+        }
+      },
+      "memory": {
+        "mse": 0.0023797314385967192,
+        "train_only_lambda": 10.0,
+        "diagnostic": {
+          "features": 104,
+          "train_samples": 150,
+          "lambda_tune_MSE": 0.002737432205417786
+        }
+      },
+      "sham": {
+        "mse": 0.002372927470083214,
+        "train_only_lambda": 10.0,
+        "diagnostic": {
+          "features": 104,
+          "train_samples": 150,
+          "lambda_tune_MSE": 0.0028363445624945507
+        }
+      },
+      "memory_over_instant_pct": 1.1354748192023012,
+      "memory_over_sham_pct": -0.2867331007494542,
+      "memory_better_windows_vs_instant": 23,
+      "memory_better_windows_vs_sham": 29,
+      "count": 48
     },
     "W4": {
-      "full_mse": 0.11694903035337727,
-      "reset_equal_rms_mse": 0.11694922220582764,
-      "reset_worsening_pct": 0.00016404791881649683,
-      "full_better_windows": 39,
-      "issues": 48
+      "coarse_unadjusted_mse": 0.011514325457234607,
+      "instant": {
+        "mse": 0.002331048521826151,
+        "train_only_lambda": 10.0,
+        "diagnostic": {
+          "features": 56,
+          "train_samples": 150,
+          "lambda_tune_MSE": 0.0028463762206286784
+        }
+      },
+      "memory": {
+        "mse": 0.002306800992316113,
+        "train_only_lambda": 10.0,
+        "diagnostic": {
+          "features": 104,
+          "train_samples": 150,
+          "lambda_tune_MSE": 0.0028277701999934526
+        }
+      },
+      "sham": {
+        "mse": 0.002436256300346091,
+        "train_only_lambda": 10.0,
+        "diagnostic": {
+          "features": 104,
+          "train_samples": 150,
+          "lambda_tune_MSE": 0.0029829579602840355
+        }
+      },
+      "memory_over_instant_pct": 1.0401984035511396,
+      "memory_over_sham_pct": 5.313698234934794,
+      "memory_better_windows_vs_instant": 26,
+      "memory_better_windows_vs_sham": 25,
+      "count": 48
     }
   },
-  "independent_2017_audit_opened": false
+  "parameter_updates_on_mhc": 0
 }
