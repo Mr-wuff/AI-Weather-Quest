@@ -1,0 +1,20 @@
+# CIDM-MHC Real A13-FIX1 actual remote failure → A13-FIX2 independent ARCO-ERA5 data bridge
+2026-10-17
+
+## User's actual A13-FIX1 failure (grounded)
+- Original user result `CIDM_MHC_REAL_A13_FIX1_RESILIENT_REPORTS.zip` **SHA256 `7b8dbe19b0dc9b7c3973a04c3cd461ec4707a5984ed266acbf5c3aaeb7907695`**, uploaded sha sidecar exactly matches and ZIP CRC PASS. Complete `reports/status.json`, `reports/attempted_endpoints.json`, `reports/failure_traceback.txt` inspected.
+- Status `A13_FIX1_STOPPED_REMOTE_OR_SOURCE_Q0_FAIL`. On user Colab NOAA PSL historical year 2012 `hgt.2012.nc`, BOTH `psl.noaa.gov` and `www.psl.noaa.gov` returned HTTP 503 on OPeNDAP, and both NOAA THREDDS NCSS entries 503. 18 source attempts recorded. First processing `2012-01-01` Z500 then exhausted. SST OPeNDAP also HTTP 503. Full-year HTTP fallback intentionally disabled; **we have NOT confirmed** its availability. Zero annual weather inputs, zero training, zero forecast scores, no AIWQ RPSS. This is external data/service failure, not CIDM physics negative evidence.
+- The two PSL hostname forms are not truly distinct independent scientific data distributors, so repeated retries at those THREDDS endpoints are not a robust data strategy.
+
+## Explicit source change, NOT a silent NOAA fix
+- A13-FIX2 **switches data product** from NOAA NCEP/NCAR R1 pressure-height + NOAA OISST-v2 to publicly hosted **Google Research ARCO-ERA5** (GCS URL `gs://gcp-public-data-arco-era5/ar/full_37-1h-0p25deg-chunk-1.zarr-v3`), see official https://github.com/google-research/arco-era5 and independent catalog https://catalog.leap.columbia.edu/feedstock/arco-era5.
+- Precisely use ERA5 `geopotential` at **500 hPa**, divide by 9.80665 for geopotential meters, and `sea_surface_temperature` from K to Celsius, sampled **Sunday 12:00 UTC**, 4 full days before matching Thursday issue. Unlike NOAA daily averages, these are instantaneous 12UTC ERA5 fields. Public cloud access anonymous, **NO Google Drive**, no HF or ECMWF credentials. STRICT no nearest-time substitution or retrieval of forecast verification labels.
+- Native 0.25deg xarray Zarr fields are spatially sliced **::6 before cloud materialization** into exactly 121x240 1.5deg global grid. Fail if missing variable/time/500hPa level, wrong grid, Z500 median out of 4000–6500m or insufficient finite coverage, or SST sea-only coverage not in (0.35,0.98). Preserve land SST missing rather than fill.
+- Yearly Sunday subset 2012–2015 default **4 per year** for source Q0, user may increase to 16 after real cloud access PASS. This is not a forecast skill experiment: no training, no target labels, no RPSS, no operational release-latency proof or long-train authority.
+
+## Verification and delivery
+- Self-contained Notebook `CIDM_MHC_REAL_A13_P0_FIX2_ARCO_ERA5_Colab_STANDALONE.ipynb` **SHA256 `5c1cd1b279f6337c5558dd54814266fa919389f18e9026566e25685ca1005d1b`**.
+- Python driver `a13_fix2_arco_era5_bridge.py` SHA256 `80ff3c9c0457200d80d4381490ac4e22f581b45f3e6765c572e3b0c209fec158`. Original immutable user A13-FIX1 failed ZIP included with original SHA.
+- Full research delivery ZIP **SHA256 `54c0a157eb9a52083ceab4510d85b75868e5aa85a3217207afb7bac5737719e7`**, CRC and 5 member SHA plus manifest PASS.
+- Whole standalone notebook **4/4 executable cells passed** isolated nbclient CPU smoke without internet. Additional **full-native 721x1440 synthetic ARCO** data -> 121x240 per sample, four years x two sampled dates -> four NPZ inputs, ZIP CRC / time+4d contract PASS. Forced simulated cloud outage -> full traceback/status and valid ZIP PASS. These are engineering/mock checks; **live Google GCS ARCO data have NOT been downloaded or checked** in the assistant environment. No real source data qualification claimed before user Colab execution.
+- If ARCO public cloud access fails too, stop and preserve report instead of inventing samples or repeatedly attempting the same service. Qualified actual source then requires longer history, defensible issue-time availability and independent held-out meteorological evaluation before a new CIDM-Earth forecast training contract.
