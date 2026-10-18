@@ -21,7 +21,7 @@ Are **forecaster-issued temporal GEFS member trajectories** informationally usef
 - Automatic browser download ZIP+SHA for PASS/BLOCKED, no raw GRIB in final report. Optional Drive cache for Colab runtime reset.
 - Entire Notebook executed in offline QA: `OFFLINE_QA_PASS_NO_REAL_S3_OR_GEFS_LABEL_EVAL`. Additional tests read real three previous parent archives, simulated range S3 7/7 records+resume, missing f786 correctly rejected, fake temporal features/year-fold eval. Corrupt parent SHA -> BLOCKED with fresh report, no stale QA.
 - **Real S3 temporal retrieval NOT executed** as of preregistration; no measured P7 gain or neural training. First user run should upload the ZIP + SHA256.
-- Downloadable compact ZIP including all readable source, Notebook, mock test, pinned P1 fallback and Chinese protocol is `CIDM_EARTH_A15_P7_LITE_Temporal_Information_Qualification_FULL.zip`, sha256 `0234deae0e39ad76a30957d59c8f35add1de330ab34db1382e0376a07981cc18`.
+- Downloadable compact ZIP including all readable source, Notebook, mock test, pinned P1 fallback and Chinese protocol is `CIDM_EARTH_A15_P7_LITE_Temporal_Information_Qualification_FULL.zip`, sha256 `83b798e96a21012fa17d65d8dbafbf5db8fe5469eed0e80b47649d98b8db7ad2`.
 - GitHub PR contains preregistration and links to project work; readable P7 source shipped in user ZIP, not yet committed in this branch. HF remains unchanged.
 
 ## Follow-up
