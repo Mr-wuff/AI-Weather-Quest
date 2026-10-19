@@ -1,0 +1,62 @@
+{
+  "schema": "CIDM_A15_HISTORY_ARCHIVE_PLAN_V1",
+  "state": "PENDING_USER_AUTHORIZED_HF_UPLOAD_NOT_YET_ON_HF",
+  "date": "2026-10-19",
+  "repository": "wuff-mann/AI_Weather_Quest",
+  "repo_type": "model",
+  "prefix": "research_artifacts/a15/v20261019",
+  "bundle_name": "CIDM_A15_P1_P7_ONE_TIME_HF_ARCHIVE_INPUT.zip",
+  "bundle_sha256": "40915aad6d0b8dd4044e93a9c1b4a13efd9591f8fe85c4c7b5497b69fcc4c5a4",
+  "artifacts": [
+    {
+      "stage": "P1",
+      "name": "CIDM_EARTH_A15_P1_DELIVERY_REPORTS.zip",
+      "sha256": "a8025c19bc9109a639891c8526bbce1a7bff18a0c5451e6e3b4d15b486b1fa99"
+    },
+    {
+      "stage": "P2",
+      "name": "CIDM_EARTH_A15_P2_DELIVERY_REPORTS.zip",
+      "sha256": "dd380fb310546b080314ecb8ad78a2edbecad68413ac21f7696ea6a9feda486c"
+    },
+    {
+      "stage": "P3",
+      "name": "CIDM_EARTH_A15_P3_DELIVERY_REPORTS.zip",
+      "sha256": "0a60d66483bdf81d9e7bdeacf72c40d7eb1e4cabd8f7d6cb6691cc61c903ebd9"
+    },
+    {
+      "stage": "P4",
+      "name": "CIDM_EARTH_A15_P4_DELIVERY_REPORTS.zip",
+      "sha256": "10e471b02b94583c0b6a59857d1f9f6339c3ab2a498845e429a621bb34a25871"
+    },
+    {
+      "stage": "P5",
+      "name": "CIDM_EARTH_A15_P5_Real_SixCase_Attribution_REPORTS.zip",
+      "sha256": "611dce6f6de444c62edbe0339c639d818edb209b2d41065793c74e85e12e4c51"
+    },
+    {
+      "stage": "P6",
+      "name": "CIDM_EARTH_A15_P6_Real_FixedFlux_Attribution_REPORTS.zip",
+      "sha256": "0d861561e9c9ca24fc7fc5d564283449e19452bf3addb77b0532c6df89f50a75"
+    },
+    {
+      "stage": "P7",
+      "name": "CIDM_EARTH_A15_P7_DELIVERY_REPORTS.zip",
+      "sha256": "79995d1b53c19956ffcd9b5c9794d1eef891b029bd5c4b582bbe73f3f8e866e6"
+    }
+  ],
+  "security": "HF_TOKEN must be supplied only within user-owned Colab Secrets. The provided archiver verifies all seven remote files before publishing the HF manifest. No token or original GEFS/ERA5 raw data in this repository.",
+  "caveat": "P2 original 2026-10-18 .sha256 sidecar does not match present uploaded byte version, which was audited internally. Lock uses actual ZIP digest.",
+  "experimental_result": {
+    "P7": "REAL_SIX_SEEN_CASE_TEMPORAL_Q0_EXPLORATORY_COMPLETE",
+    "actual_s3_grib_record_reads": 420,
+    "increments_pct_vs_static": {
+      "MSLP_W3": -1.8350821749,
+      "MSLP_W4": -3.9232298378,
+      "TAS_W3": -2.1113395033,
+      "TAS_W4": -0.7474296643
+    },
+    "mechanism_gate": "FAIL",
+    "official_rpss": null,
+    "formal_cidm_training_authorized": false
+  }
+}
