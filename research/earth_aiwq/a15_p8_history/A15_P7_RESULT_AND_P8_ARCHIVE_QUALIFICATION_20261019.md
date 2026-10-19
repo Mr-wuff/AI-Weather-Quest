@@ -1,0 +1,19 @@
+# A15-P7 real retrospective temporal Q0 failure → A15-P8 history archive and unseen-date source qualification
+
+**2026-10-19.** Actual user A15-P7 ZIP SHA256: `79995d1b53c19956ffcd9b5c9794d1eef891b029bd5c4b582bbe73f3f8e866e6`, supplied sidecar matches, ZIP CRC PASS. Real public GEFSv12 reforecast traces **420/420** GRIB2 ranged messages across six previously inspected Jan/Jul 2017–19 forecast issues (5 members × 2 variables × 7 lead steps). The exploratory leave-one-year-out ridge probe attempting to predict **forecast absolute error magnitude**, not future weather, found ordered time features worse than frozen static features on all four heads: MSLP W3 −1.8351%, W4 −3.9232%; TAS W3 −2.1113%, W4 −0.7474%. Shuffled-time and season-matched wrong-year controls did not establish incremental ordered-time mechanism value. **Gate FAIL, no CIDM training.**
+
+## Permanent input handoff
+- SHA-validated seven genuine P1–P7 user experiment result ZIPs have been assembled locally in a single, one-time **17,702,054-byte** transfer bundle `CIDM_A15_P1_P7_ONE_TIME_HF_ARCHIVE_INPUT.zip`, SHA256 `40915aad6d0b8dd4044e93a9c1b4a13efd9591f8fe85c4c7b5497b69fcc4c5a4`. Stored in downloadable ChatGPT artifact, not committed here (binary archives, some containing derived weather fields).
+- **IMPORTANT: As of writing, no Hugging Face upload has occurred.** Assistant has no writable HF token or binary upload connector. GitHub's structured registry file in this branch has explicit state `PENDING_USER_AUTHORIZED_HF_UPLOAD_NOT_YET_ON_HF`; do not treat that metadata as a claim of HF upload.
+- A 12.6KB Colab archiver notebook and standalone tested engine are supplied separately in ChatGPT. First user-authorized Colab run reads HF_TOKEN from Secrets, checks repo write rights, asks to upload this **one** bundled archive only if no remote full index already exists; SHA-verifies each component and HF readback, and publishes `research_artifacts/a15/v20261019/manifest.json` **last**. Future notebooks use `a15_hf_results_loader.py` from this branch to fetch exact P1…P7 files by SHA and no repeated upload.
+- P2 historical sidecar mismatch remains in public metadata; the exact internally audited and actually uploaded byte variant SHA is `dd380fb310546b080314ecb8ad78a2edbecad68413ac21f7696ea6a9feda486c`.
+- Mock HF API full run: first upload+readback seven files PASS, repeat run 0 reuploads PASS, no token BLOCKED, corrupted bundle BLOCKED. Whole notebook 4 executable code cells offline execute to BLOCKED diagnostic. Real HF upload **pending user**.
+
+## A15-P8 Q0 only (future independent data source preflight)
+New 2005–2007 six dates: `2005010500`, `2005070600`, `2006010400`, `2006070500`, `2007010300`, `2007070400`; verify anonymous S3 inventory for 5 members × MSLP/TAS = 60 35-day GEFS reforecast GRIB2 objects and index lines for 7 fixed leads [408,456,504,600,624,696,786] hours. **No new real S3 preflight has run**; mock 60-object normal and missing-lead tests PASS. No real weather verification/RPSS, no CIDM fitting. This Q0 can only qualify the next independent-date experiment, not full training.
+
+## Deliverables
+Notebook `CIDM_EARTH_A15_P8_LITE_HF_ArchiveAndUnseenPreflight_Colab.ipynb`; Python `a15_p8_archive_and_preflight.py`, mock tests and Chinese README/contract are in ChatGPT engineering ZIP `CIDM_EARTH_A15_P8_LITE_HF_ArchiveAndSourcePreflight_FULL.zip`, SHA `a2a2d13e004947f41396204fb7e384e7b540229090187b694e5e21042f8134bf`.
+Script ends with ZIP+SHA256 browser download on PASS/BLOCKED. Test statuses are explicitly not real remote outcomes.
+
+Repositories: GitHub branch holds actual P7 source, immutable SHA archive plan and remote loader; only HF user-authorized Colab can make data archive live. Private HF model repo may be selected if user wants derived fields protected.
