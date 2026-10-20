@@ -1,0 +1,21 @@
+# CIDM-Earth A15-P14 REAL Pilot4 BLOCKED at Google Drive mount → FIX1 research handoff (2026-10-20)
+
+## Genuine uploaded outcome
+- Real uploaded `CIDM_EARTH_A15_P14_PILOT4_DELIVERY_REPORTS.zip` SHA256: `2053a7b20c82cf2f520d51385a0881c70747c8f8d93796bfe00511b2572dfb91`, exact user sidecar match and ZIP CRC PASS.
+- Archive contains only `reports/STATUS.json` (~996 bytes), reporting `BLOCKED_BOOTSTRAP_NO_RESEARCH_RESULT`, `pilot4`, `offline_qa:false`, **0/4 genuine new dates verified**.
+- Executed Colab logs prove `google.colab.drive.mount('/content/drive')` raised `ValueError: mount failed`; early `BOOT_ERROR='DRIVE_MOUNT_FAILED'` prevented even pinned source fetching/anonymous NOAA initialization. Therefore NO legitimate new-year RMSE, NO failure of the actual P13 spatial correction, NO inference about GEFS file availability.
+- Previous P13 train-only old-year candidate result: MSLP W3 +3.906% (4/4 leave-year folds) but W4 weak; P13 joint-variable Gate FAIL. A15-P14 is prospective frozen-baseline transfer to **new** 2003/2005/2008/2011 years and must remain unchanged.
+
+## FIX1 only changes Notebook storage/bootstrap
+- New `CIDM_EARTH_A15_P14_FIX1_DriveFallback_RealNewYear_LITE_Colab.ipynb` size **117347 bytes**.
+- `USE_DRIVE=True` means prefer Drive, not fatal failure: on mount ValueError, report explicit `VOLATILE_CACHE_WARNING` and fallback to `/content/CIDM_EARTH_A15_P14` for actual Colab execution (or working directory outside Colab). Preserve `REQUIRE_DRIVE=True` option to fail closed before costly downloads when persistent storage is mandatory.
+- In fallback when at least one actual case cache exists, create and browser-download `P14_VOLATILE_CASE_CACHE_RECOVERY.zip` and SHA sidecar containing only `cases/paired_YYYYMMDDHH.npz/.json` with exact SHA-locked manifest. Optional `CACHE_RECOVERY_INPUT` can restore such a verified backup; that cannot substitute durable Drive or user-approved private HF. ZIP member path allowlist + SHA and conflict checks block corruption/path traversal.
+- Freeze unmodified original P14 Python engine SHA `90499e741d9247d55a6588c75c038f4d5e7476656b7376b8479d2a5e37532b34`, original genuine P13 derived reference SHA `cae9ce1c6dead8ac2a9a1a209c8ce1dd7329ed00582577bad9d32b1040f69d4a`, and pinned original P1/P2/P11-FIX1/P12 source SHA. No modifications to algorithms, data, evaluation controls, 2014/2016 holdouts or candidate threshold.
+- Default new-year `pilot4`: 2003040200,2005070600,2008100100,2011010500; ~2240 ranged NOAA GEFS records. `expand16` four seasons of same 2003/2005/2008/2011 years and ~8960 records. **Pilot4 cannot pass scientific Gate regardless of results.** Complete expand16 required for W3/W4 both weeks at >=3/4 full unseen years and >=1% vs raw, >=0.5% vs both scalar and shifted negative controls.
+- Results ZIP + SHA always browser-downloaded (if Colab browser cooperates) even when BLOCKED; fallback case-cache backup additional.
+- Package: `CIDM_EARTH_A15_P14_FIX1_DriveFallback_LITE_FULL.zip`, size **184019 bytes**, actual SHA256 `ce616cb2733bc3fbb46d7a3d6a60170d0eff0874d182ccf0a7debcf17081dae0`, CRC+per-file hashes PASS. Includes full Notebook, readable frozen original modules, original P13 65KB derived statistic, Chinese review and bootstrap tests. Download from ChatGPT artifact.
+- Offline whole notebook 4 code cells PASS. Simulated genuine `ValueError: mount failed` correctly selects volatile workdir and no BOOT_ERROR. Mock cache bundle full CRC/hash pack+restore PASS, corrupt member blocked; deliberately changed embedded engine SHA -> whole Notebook BLOCKED diagnostic ZIP. Mock not used as scientific evidence.
+- **Real FIX1 online weather run NOT performed.** Neither official ECMWF RPSS nor original-model training is authorized. Retrospective GEFS may not be issue-time-operationally available. No automatic public HF writes. User historical result ZIP reupload not required.
+
+## Next result evaluation
+First rerun P14 Pilot4: verify all 4 real pairs/GEFS source fingerprints/ERA5 labels and raw vs spatial/global/shifted controls. Then, if source integrity passes, P14 Expand16 before evaluating preregistered Gate. An independent small GeoPort-CIDM-vs-CNN pilot later needs many independent years and multi-seed matched training; no immediate formal long training.
