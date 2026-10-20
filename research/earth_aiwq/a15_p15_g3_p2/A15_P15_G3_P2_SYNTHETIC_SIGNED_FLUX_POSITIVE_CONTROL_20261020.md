@@ -27,7 +27,7 @@ This G3-P2 Q0 tests a *different expressivity*: directional advection with signe
 - Older real-weather flux-necessity Gate continues **FAIL**. 2014 and 2016 true labels remained untouched. No formal long training authorized.
 
 ## Reproducibility and future work
-- Readable Python engine SHA256: `5dd0eafbe4bc19bcf320c6909a4720da284a84c8ca4dd41de35593851dac0ce6`; Colab source/true-geometry SHA verified on bootstrap; no user historical ZIP, no NOAA/HF/Google Drive required.
+- Readable Python engine SHA256: `917fafd7660211600788556b2c53e5664c1226beb9b184fbacfccbdae956a2cf`; Colab source/true-geometry SHA verified on bootstrap; no user historical ZIP, no NOAA/HF/Google Drive required.
 - User-facing 14,255-byte full Colab Notebook, SHA256 `d3427c865534852a185939962b646df1fc78ade3d5b7bec6d2c665d83f0bd195`.
 - Actually executed controls result ZIP SHA256 `04cfff30934bb9f94e1c8148b2cb22e93c776999b47fb259aa3df3f96360bfba`. Complete source + notebook + authentic-area JSON + QA + result ZIP downloadable as `CIDM_EARTH_A15_P15_G3_P2_DirectionalFlux_Controlled_FULL.zip`, SHA256 `b2b1fe394a2f2ed6935ecfa7c436ddb8585f340e6576376f92a7d848b9a3fdf1`. CRC/member SHA PASS.
 - Whole 5-cell Notebook executed in offline smoke and full 3-seed mode; deliberate embedded source SHA corruption gives accurately labeled BLOCKED+matching SHA result ZIP; geometry SHA tamper blocked; standalone repeatability tests PASS.
